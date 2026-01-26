@@ -1,0 +1,25 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Bedrock Copycats",
+		"description": "Bedrock Copycats Resource Pack",
+		"uuid": "e8bb8f16-a115-6748-dcbb-03dd3fa02471",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"metadata": {
+		"authors": ["WILD DRS"],
+		"generated_with": {
+			"blockbench_block_wizard": ["1.4.1"],
+			"blockbench_item_wizard": ["1.2.1"]
+		}
+	},
+	"modules": [
+		{
+			"description": "Bedrock Copycats",
+			"type": "resources",
+			"uuid": "0be3b98a-5203-0687-8898-2d8a98a45dfb",
+			"version": [1, 0, 0]
+		}
+	]
+}

@@ -1,0 +1,438 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:block": {
+        "description": {
+            "identifier": "cc:copycat_trapdoor_glass",
+            "states": {
+                "cc:open": [
+                    false,
+                    true
+                ],
+                "cc:glass_type": [
+                    "purple",
+                    "black",
+                    "cyan",
+                    "gray",
+                    "green",
+                    "light_blue",
+                    "light_gray",
+                    "lime",
+                    "magenta",
+                    "orange",
+                    "pink",
+                    "red",
+                    "yellow",
+                    "white"
+                ]
+            },
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:vertical_half"
+                    ]
+                },
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:custom_components": [
+                "cc:toggleable"
+            ],
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    2.92,
+                    16
+                ]
+            },
+            "tag:one_way_collidable": {},
+            "tag:trapdoors": {},
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    2.92,
+                    16
+                ]
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.copycat_trapdoor"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "copycat_base",
+                    "render_method": "alpha_test_single_sided"
+                }
+            },
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "liquid_type": "water",
+                        "can_contain_liquid": true
+                    }
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'north' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            180
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'south' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            180,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'east' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            180,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'west' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            180,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'north' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            90,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'south' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            -90,
+                            0,
+                            180
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'east' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'west' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            180,
+                            90,
+                            90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'north' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'south' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'east' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'west' && !q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'north' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            90,
+                            0,
+                            180
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'south' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            -90,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'east' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'west' && q.block_state('cc:open')",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            180,
+                            -90,
+                            90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'purple'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "purple_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'black'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "black_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'cyan'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "cyan_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'gray'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "gray_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'green'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "green_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'light_blue'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "light_blue_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'light_gray'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "light_gray_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'lime'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "lime_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'magenta'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "magenta_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'orange'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "orange_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'pink'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "pink_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'red'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "red_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'white'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "white_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('cc:glass_type') == 'yellow'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "yellow_stained_glass",
+                            "render_method": "blend"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

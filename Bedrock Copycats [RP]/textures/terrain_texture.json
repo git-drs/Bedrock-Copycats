@@ -1,0 +1,14 @@
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"copycat_base": {
+			"textures": "textures/blocks/copycat_base.png"
+		},
+		"copycat_table": {
+			"textures": "textures/blocks/iron_block"
+		}
+	}
+}

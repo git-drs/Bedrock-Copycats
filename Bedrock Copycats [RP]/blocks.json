@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.0",
+	"copycat_fence": {
+		"sound": "copper"
+	},
+	"copycat_trapdoor": {
+		"sound": "copper"
+	},
+	"copycat_board": {
+		"sound": "copper"
+	},
+	"copycat_pannel": {
+		"sound": "copper"
+	},
+	"copycat_horizontal_pannel": {
+		"sound": "copper"
+	},
+	"copycat_stair": {
+		"sound": "copper"
+	},
+	"copycat_horizontal_corner_beam": {
+		"sound": "copper"
+	},
+	"copycat_slab": {
+		"sound": "copper"
+	},
+	"copycat_corner_beam": {
+		"sound": "copper"
+	},
+	"copycat_slope": {
+		"sound": "copper"
+	},
+	"copycat_beam": {
+		"sound": "copper"
+	},
+	"copycat_table": {
+		"sound": "copper"
+	},
+	"copycat_block": {
+		"sound": "copper"
+	}
+}

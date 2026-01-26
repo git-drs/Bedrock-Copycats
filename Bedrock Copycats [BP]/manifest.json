@@ -1,0 +1,43 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Bedrock Copycats",
+		"description": "Bedrock Copycats Behavior Pack",
+		"uuid": "d47ec39c-2f29-25fe-82ef-9a70c9b970e3",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 21, 93]
+	},
+	"metadata": {
+		"authors": ["WILD DRS"],
+		"generated_with": {
+			"blockbench_block_wizard": ["1.4.1"],
+			"blockbench_item_wizard": ["1.2.1"]
+		}
+	},
+	"modules": [
+		{
+			"description": "Behavior",
+			"version": [1, 0, 0],
+			"uuid": "411d0e89-f9b3-84eb-7879-14aea831fccf",
+			"type": "data"
+		},
+		{
+			"description": "script",
+			"version": "1.0.0",
+			"uuid": "5e017325-c83e-4c56-aadb-fb37334bf1eb",
+			"type": "script",
+			"entry": "scripts/main.js",
+			"language": "javascript"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "e8bb8f16-a115-6748-dcbb-03dd3fa02471",
+			"version": [1, 0, 0]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.18.0"
+		}
+	]
+}

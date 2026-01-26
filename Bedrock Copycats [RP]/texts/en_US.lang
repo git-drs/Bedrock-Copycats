@@ -1,0 +1,14 @@
+tile.cc:copycat_block.name=Copycat Block
+item.cc:wrench=Wrench
+tile.cc:copycat_table.name=Copycat Table
+tile.cc:copycat_beam.name=Copycat Beam
+tile.cc:copycat_slope.name=Copycat Slope
+tile.cc:copycat_corner_beam.name=Copycat Beam Corner
+tile.cc:copycat_slab.name=Copycat Slab
+tile.cc:copycat_horizontal_corner_beam.name=Copycat Beam Horizontal Corner
+tile.cc:copycat_stair.name=Copycat Stair
+tile.cc:copycat_pannel.name=Copycat Pannel
+tile.cc:copycat_horizontal_pannel.name=Copycat Pannel Horizontal
+tile.cc:copycat_board.name=Copycat Board
+tile.cc:copycat_trapdoor.name=Copycat Trapdoor
+tile.cc:copycat_fence.name=Copycat Fence
