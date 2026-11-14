@@ -41,7 +41,11 @@ export function handleWrench(ctx) {
 
         // Give base copycat block in Survival
         if (!isCreative) {
-          giveOrDrop(player, dimension, location, new ItemStack(shapeId, 1));
+          let count = 1;
+          if (shapeId === "cc:copycat_layer") {
+            count = getState(target.permutation, "cc:height") || 1;
+          }
+          giveOrDrop(player, dimension, location, new ItemStack(shapeId, count));
         }
 
         if (shapeId === "cc:copycat_door") {

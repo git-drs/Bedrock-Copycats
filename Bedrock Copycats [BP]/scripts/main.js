@@ -10,6 +10,7 @@ import { initLadderSystem } from "./systems/ladder.js";
 import "./systems/trapdoor.js";
 import "./systems/fence_gate.js";
 import "./systems/door.js";
+import "./systems/layer.js";
 import "./systems/connections.js";
 
 export * from "./api.js";
@@ -27,6 +28,23 @@ onBlockInteract((ctx) => {
 world.afterEvents.playerBreakBlock.subscribe((event) => {
   const { block, brokenBlockPermutation, dimension, player } = event;
   const typeId = brokenBlockPermutation.type.id;
+  const shape = getShapeId(typeId);
+
+  // If broken block is a stacked copycat_layer, drop the extra layers
+  if (shape === "cc:copycat_layer") {
+    const height = brokenBlockPermutation.getState("cc:height") || 1;
+    if (height > 1) {
+      try {
+        if (!player?.getGameMode || player.getGameMode() !== "creative") {
+          dimension.spawnItem(new ItemStack("cc:copycat_layer", height - 1), {
+            x: block.location.x + 0.5,
+            y: block.location.y + 0.5,
+            z: block.location.z + 0.5,
+          });
+        }
+      } catch {}
+    }
+  }
 
   if (isVariant(typeId)) {
     try {

@@ -1,0 +1,606 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_layer__stone_6",
+			"states": {
+				"cc:height": [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8
+				],
+				"cc:material": [
+					"polished_diorite",
+					"polished_granite",
+					"prismarine",
+					"prismarine_bricks",
+					"purple_concrete",
+					"purple_glazed_terracotta",
+					"purple_shulker_box",
+					"purpur_block",
+					"purpur_pillar",
+					"quartz_block",
+					"quartz_bricks",
+					"quartz_pillar",
+					"raw_copper_block",
+					"raw_gold_block",
+					"raw_iron_block",
+					"red_concrete"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:layer"
+			],
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_layer_1"
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2,
+					16
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7.5,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 1.15
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.25
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:map_color": "#ff7336",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_layer.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:height') == 2",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_2"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							4,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							4,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 3",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_3"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							6,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							6,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 4",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_4"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 5",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_5"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							10,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							10,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 6",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_6"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							12,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							12,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 7",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_7"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							14,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							14,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 8",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_8"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'polished_diorite'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "polished_diorite",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'polished_granite'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "polished_granite",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'prismarine'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_prismarine",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'prismarine_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "prismarine_bricks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purple_concrete",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purple_glazed_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purple_shulker_box",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purpur_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_purpur_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purpur_pillar'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purpur_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "purpur_pillar_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "purpur_pillar_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "purpur_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "purpur_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "purpur_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "purpur_pillar_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'quartz_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_quartz_block_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "flattened_quartz_block_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "flattened_quartz_block_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "flattened_quartz_block_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "flattened_quartz_block_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "flattened_quartz_block_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "flattened_quartz_block_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'quartz_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "quartz_bricks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'quartz_pillar'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "quartz_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "quartz_pillar_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "quartz_pillar_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "quartz_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "quartz_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "quartz_pillar_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "quartz_pillar_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'raw_copper_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "raw_copper_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'raw_gold_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "raw_gold_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'raw_iron_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "raw_iron_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_concrete",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}
