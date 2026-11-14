@@ -92,6 +92,6 @@ For each block, the full lifecycle is:
   9. `cc:copycat_layer`: 16x(2..16)x16 stacked slices with 8 height states, right-click stacking, survival drop multiplier ($H$ items on break), sneak-wrench refund $H$ items, 87 variants. (Commit: `3b1b876`)
   10. `cc:copycat_lantern`: Standing on floor vs hanging from ceiling (`cc:hanging`), finial chain geometry, light emission level 15, 87 variants. (Commit: `3a5a368`)
   11. `cc:copycat_pressure_plate`: Floor sensor with unpressed/pressed permutations, entity step-on detection (`pressurePlate.js`), redstone power 15 output, 87 variants. (Commit: `d07f5a5`)
-  12. `cc:copycat_button`: 6-face attachment (walls, floor, ceiling), 30-tick pulse timer with click sounds (`button.js`), relative face redstone powering, 87 variants. (Commit: pending)
+  12. `cc:copycat_button`: 6-face attachment (walls, floor, ceiling), 30-tick pulse timer with click sounds (`button.js`), relative face redstone powering, 87 variants. (Commit: `6782350`)
 - **Step 7**: Datagen check verified 24 texturable shapes, 87 material groups, and 2,088 generated block variants.
 - **Step 8**: All commits pushed to GitHub repository `git-drs/Bedrock-Copycats` on branch `feat/all-copycat-blocks`.
