@@ -1,0 +1,408 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_chain__cloth_0",
+			"states": {
+				"cc:axis": [
+					"y",
+					"x",
+					"z"
+				],
+				"cc:material": [
+					"black_wool",
+					"blue_wool",
+					"brown_wool",
+					"cyan_wool",
+					"gray_wool",
+					"green_wool",
+					"light_blue_wool",
+					"light_gray_wool",
+					"lime_wool",
+					"magenta_wool",
+					"orange_wool",
+					"pink_wool",
+					"purple_wool",
+					"red_wool",
+					"white_wool",
+					"yellow_wool"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7.5,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 1.15
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.25
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_chain",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:map_color": "#ff7336",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_chain.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:axis') == 'y'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-2
+						],
+						"size": [
+							4,
+							16,
+							4
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-2
+						],
+						"size": [
+							4,
+							16,
+							4
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:axis') == 'x'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							6,
+							-2
+						],
+						"size": [
+							16,
+							4,
+							4
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							6,
+							-2
+						],
+						"size": [
+							16,
+							4,
+							4
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:axis') == 'z'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							6,
+							-8
+						],
+						"size": [
+							4,
+							4,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							6,
+							-8
+						],
+						"size": [
+							4,
+							4,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'black_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_black",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'blue_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_blue",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'brown_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_brown",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cyan_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_cyan",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_gray",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_green",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_blue_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_light_blue",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_gray_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_silver",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'lime_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_lime",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magenta_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_magenta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_orange",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_pink",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_purple",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_red",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'white_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_white",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'yellow_wool'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "wool_colored_yellow",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,409 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_chain__terracotta_0",
+			"states": {
+				"cc:axis": [
+					"y",
+					"x",
+					"z"
+				],
+				"cc:material": [
+					"black_terracotta",
+					"blue_terracotta",
+					"brown_terracotta",
+					"cyan_terracotta",
+					"gray_terracotta",
+					"green_terracotta",
+					"hardened_clay",
+					"light_blue_terracotta",
+					"light_gray_terracotta",
+					"lime_terracotta",
+					"magenta_terracotta",
+					"orange_terracotta",
+					"pink_terracotta",
+					"purple_terracotta",
+					"red_terracotta",
+					"white_terracotta"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7.5,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 1.15
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.25
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_chain",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:map_color": "#ff7336",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_chain.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:axis') == 'y'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-2
+						],
+						"size": [
+							4,
+							16,
+							4
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-2
+						],
+						"size": [
+							4,
+							16,
+							4
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:axis') == 'x'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							6,
+							-2
+						],
+						"size": [
+							16,
+							4,
+							4
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							6,
+							-2
+						],
+						"size": [
+							16,
+							4,
+							4
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:axis') == 'z'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							6,
+							-8
+						],
+						"size": [
+							4,
+							4,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							6,
+							-8
+						],
+						"size": [
+							4,
+							4,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'black_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "black_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'blue_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "blue_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'brown_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "brown_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cyan_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cyan_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'hardened_clay'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "hardened_clay",
+							"render_method": "alpha_test",
+							"isotropic": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_blue_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_blue_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_gray_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_gray_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'lime_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "lime_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magenta_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magenta_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "orange_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pink_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purple_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'white_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "white_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}
