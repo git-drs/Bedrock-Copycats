@@ -1,0 +1,133 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_lantern__metal_blend_0",
+			"states": {
+				"cc:hanging": [
+					false,
+					true
+				],
+				"cc:material": [
+					"respawn_anchor",
+					"_unused"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:lantern"
+			],
+			"minecraft:light_emission": 15,
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_lantern_standing"
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					9,
+					6
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					9,
+					6
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "blend"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 15
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_lantern.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:hanging')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_lantern_hanging"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							9,
+							6
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							15,
+							6
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'respawn_anchor'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "respawn_anchor_side",
+							"render_method": "blend"
+						},
+						"up": {
+							"texture": "respawn_anchor_top",
+							"render_method": "blend"
+						},
+						"down": {
+							"texture": "respawn_anchor_bottom",
+							"render_method": "blend"
+						},
+						"north": {
+							"texture": "respawn_anchor_side",
+							"render_method": "blend"
+						},
+						"south": {
+							"texture": "respawn_anchor_side",
+							"render_method": "blend"
+						},
+						"east": {
+							"texture": "respawn_anchor_side",
+							"render_method": "blend"
+						},
+						"west": {
+							"texture": "respawn_anchor_side",
+							"render_method": "blend"
+						}
+					}
+				}
+			}
+		]
+	}
+}

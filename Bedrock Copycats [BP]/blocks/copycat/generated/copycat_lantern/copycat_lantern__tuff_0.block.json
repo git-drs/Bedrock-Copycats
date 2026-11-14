@@ -1,0 +1,144 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_lantern__tuff_0",
+			"states": {
+				"cc:hanging": [
+					false,
+					true
+				],
+				"cc:material": [
+					"chiseled_tuff",
+					"tuff"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:lantern"
+			],
+			"minecraft:light_emission": 15,
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_lantern_standing"
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					9,
+					6
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					9,
+					6
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 15
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_lantern.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:hanging')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_lantern_hanging"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							9,
+							6
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							15,
+							6
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'chiseled_tuff'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chiseled_tuff",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "chiseled_tuff_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "chiseled_tuff_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "chiseled_tuff",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "chiseled_tuff",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "chiseled_tuff",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "chiseled_tuff",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'tuff'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "tuff",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}
