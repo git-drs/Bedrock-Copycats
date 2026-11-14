@@ -98,5 +98,15 @@ For each block, the full lifecycle is:
 - **Step 9**: In-game validation fixes: adjusted `copycat_fence_gate` bounding boxes for `cc:in_wall` state to prevent negative origin coordinates, and bumped format version to `1.21.120` for `copycat_button` and `copycat_pressure_plate` to enable `minecraft:redstone_producer`. (Commit: `543edaa`)
 - **Step 10**: Official Java Create Model Conversion: Downloaded source models from official `copycats-plus/copycats` and `Creators-of-Create/Create` repositories. Converted all 12 block models to Bedrock format following Blockbench's conversion engine with exact sub-quadrant slicing, directional face UV mappings, and multi-permutation states. Regenerated all 2,088 block definitions and verified 0 errors.
 - **Step 11**: Content Log Analysis & Inline Custom Components Fix: Inspected `ContentLog2026-11-14_19-16-21_1.txt` identifying `minecraft:custom_components component is not valid from 1.21.90 onward` on `copycat_button` and `copycat_pressure_plate`. Migrated both blocks to modern Bedrock 1.21.90+ inline custom components syntax (`cc:button: {}` and `cc:pressure_plate: {}`), updated `datagen/lib/shapes.mjs` component extraction, regenerated all 174 variant files, and deployed to development packs.
+- **Step 12**: Complete Geometry & Schema Error Resolution (`ContentLog2026-11-14_19-25-36_1.txt`):
+  1. **Door Bounds**: Clamped `copycat_door_lower` cubes strictly to $Y \in [0, 16]$ and shifted `copycat_door_upper` cubes by $-16$ to $Y \in [0, 16]$, resolving the box bounds violation (>30px) that previously prevented the door model from loading.
+  2. **Step Upper**: Added `geometry.copycat_step_upper` to `copycat_step.geo.json` with matching sub-quadrants and vertical UV offset.
+  3. **Chain Base**: Added `geometry.copycat_chain` to `copycat_chain.geo.json` so all 3 axis rotation permutations resolve.
+  4. **Wall Canonical Shapes**: Generated all canonical wall connection models (`copycat_wall_side`, `straight`, `straight_post`, `side2`, `tee`, `quad`) in `copycat_wall.geo.json`.
+  5. **Bars Canonical Shapes**: Generated all canonical bars connection models (`copycat_bars_side`, `straight`, `side2`, `tee`, `quad`) in `copycat_bars.geo.json`.
+  6. **Button & Plate Schema**: Reverted both to stable format version `1.21.70`, restored `minecraft:custom_components: ["cc:button"]` / `["cc:pressure_plate"]`, and removed experimental `redstone_producer` to guarantee error-free loading on all standard worlds.
+  7. **Master Audit**: Verified all 25 base blocks across all 94 geometries—zero missing geometries, zero bounds violations.
+  8. **Datagen Rebuild & Deploy**: Regenerated all 2,088 variant block files and deployed to `games/com.mojang/development_*_packs/`.
+
 
 

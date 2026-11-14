@@ -258,6 +258,264 @@
 					]
 				}
 			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.copycat_step_upper",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								8,
+								-4
+							],
+							"size": [
+								16,
+								4,
+								4
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										4
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "north"
+								},
+								"west": {
+									"uv": [
+										12,
+										4
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "west"
+								},
+								"east": {
+									"uv": [
+										0,
+										4
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "east"
+								},
+								"down": {
+									"uv": [
+										0,
+										12
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [
+								-8,
+								8,
+								0
+							],
+							"size": [
+								16,
+								4,
+								4
+							],
+							"uv": {
+								"west": {
+									"uv": [
+										0,
+										4
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "west"
+								},
+								"south": {
+									"uv": [
+										0,
+										4
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "south"
+								},
+								"east": {
+									"uv": [
+										12,
+										4
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "east"
+								},
+								"down": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [
+								-8,
+								12,
+								0
+							],
+							"size": [
+								16,
+								4,
+								4
+							],
+							"uv": {
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "west"
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "south"
+								},
+								"east": {
+									"uv": [
+										12,
+										0
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "east"
+								},
+								"up": {
+									"uv": [
+										0,
+										12
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "up"
+								}
+							}
+						},
+						{
+							"origin": [
+								-8,
+								12,
+								-4
+							],
+							"size": [
+								16,
+								4,
+								4
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "north"
+								},
+								"west": {
+									"uv": [
+										12,
+										0
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "west"
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										4,
+										4
+									],
+									"material_instance": "east"
+								},
+								"up": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										4
+									],
+									"material_instance": "up"
+								}
+							}
+						}
+					]
+				}
+			]
 		}
 	]
 }

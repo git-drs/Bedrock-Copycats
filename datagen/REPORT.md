@@ -1,7 +1,7 @@
 # datagen report
 
 - Minecraft snapshot: **1.26.60** (collision data 1.26.60)
-- Fingerprint: `ef32f15389b45b42`
+- Fingerprint: `c615bbd9c331db39`
 - Materials: 450 | groups: 87 | texturable shapes: 24 | generated blocks: 2088
 - Last run: 0 created, 175 updated, 0 removed, 1927 unchanged
 - Supplemented from overrides.json: sea_lantern

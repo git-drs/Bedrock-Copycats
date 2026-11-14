@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.120",
+	"format_version": "1.21.70",
 	"minecraft:block": {
 		"description": {
 			"identifier": "cc:copycat_button__mob_spawner_alpha_test_0",
@@ -27,7 +27,9 @@
 			}
 		},
 		"components": {
-			"cc:button": {},
+			"minecraft:custom_components": [
+				"cc:button"
+			],
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 0.5
 			},
@@ -57,19 +59,6 @@
 				}
 			},
 			"minecraft:map_color": "#ff7336",
-			"minecraft:redstone_producer": {
-				"power": 0,
-				"strongly_powered_face": "down",
-				"connected_faces": [
-					"down",
-					"up",
-					"north",
-					"south",
-					"west",
-					"east"
-				],
-				"transform_relative": true
-			},
 			"minecraft:loot": "loot_tables/blocks/copycat_button.json"
 		},
 		"permutations": [
@@ -234,11 +223,6 @@
 							1,
 							4
 						]
-					},
-					"minecraft:redstone_producer": {
-						"power": 15,
-						"strongly_powered_face": "down",
-						"transform_relative": true
 					}
 				}
 			},

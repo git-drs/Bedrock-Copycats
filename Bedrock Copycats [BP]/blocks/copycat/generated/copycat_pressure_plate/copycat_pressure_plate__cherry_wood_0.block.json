@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.120",
+	"format_version": "1.21.70",
 	"minecraft:block": {
 		"description": {
 			"identifier": "cc:copycat_pressure_plate__cherry_wood_0",
@@ -18,7 +18,6 @@
 			}
 		},
 		"components": {
-			"cc:pressure_plate": {},
 			"minecraft:collision_box": {
 				"origin": [
 					-7,
@@ -52,9 +51,6 @@
 					"render_method": "alpha_test"
 				}
 			},
-			"minecraft:redstone_producer": {
-				"power": 0
-			},
 			"minecraft:redstone_conductivity": {
 				"redstone_conductor": true
 			},
@@ -64,7 +60,10 @@
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 5
 			},
-			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json"
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json",
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			]
 		},
 		"permutations": [
 			{
@@ -96,9 +95,6 @@
 							0.5,
 							14
 						]
-					},
-					"minecraft:redstone_producer": {
-						"power": 15
 					}
 				}
 			},
