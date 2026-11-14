@@ -2,7 +2,7 @@
 import { world, ItemStack } from "@minecraft/server";
 import { WRENCH_ID } from "./config.js";
 import { onBlockInteract } from "./core/compat.js";
-import { isCopycat, isVariant, getMaterialItem, MATERIAL_STATE } from "./core/registry.js";
+import { isCopycat, isVariant, getMaterialItem, getShapeId, MATERIAL_STATE } from "./core/registry.js";
 import { handleTexturing } from "./systems/texturing.js";
 import { handleWrench } from "./systems/wrench.js";
 import { runVersionCheck } from "./systems/versionCheck.js";

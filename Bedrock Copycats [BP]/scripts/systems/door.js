@@ -34,17 +34,23 @@ const DoorComponent = {
       return;
     }
 
-    // Default hinge is left; if right neighbor has door with left hinge, make this right hinge
+    // Default hinge is left; if block to player's left is a door, this door is right-hinged
     let hinge = "left";
     try {
       const cardinal = event.permutationToPlace.getState("minecraft:cardinal_direction") || "north";
-      const isNS = cardinal === "north" || cardinal === "south";
-      const rightNeighbor = dimension.getBlock({
-        x: block.location.x + (isNS ? 1 : 0),
+      const leftOffset = {
+        north: { x: -1, z: 0 },
+        south: { x: 1, z: 0 },
+        east:  { x: 0, z: -1 },
+        west:  { x: 0, z: 1 }
+      }[cardinal] || { x: -1, z: 0 };
+
+      const leftNeighbor = dimension.getBlock({
+        x: block.location.x + leftOffset.x,
         y: block.location.y,
-        z: block.location.z + (isNS ? 0 : 1)
+        z: block.location.z + leftOffset.z
       });
-      if (rightNeighbor && getShapeId(rightNeighbor.typeId) === "cc:copycat_door") {
+      if (leftNeighbor && getShapeId(leftNeighbor.typeId) === "cc:copycat_door") {
         hinge = "right";
       }
     } catch {}

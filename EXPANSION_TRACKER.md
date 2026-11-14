@@ -107,6 +107,14 @@ For each block, the full lifecycle is:
   6. **Button & Plate Schema**: Reverted both to stable format version `1.21.70`, restored `minecraft:custom_components: ["cc:button"]` / `["cc:pressure_plate"]`, and removed experimental `redstone_producer` to guarantee error-free loading on all standard worlds.
   7. **Master Audit**: Verified all 25 base blocks across all 94 geometries—zero missing geometries, zero bounds violations.
   8. **Datagen Rebuild & Deploy**: Regenerated all 2,088 variant block files and deployed to `games/com.mojang/development_*_packs/`.
+- **Step 13**: Door Rotation Decoupling & Content Log Error Elimination (`ContentLog2026-11-14_20-21-25_1.txt`):
+  1. **Door Rotation Overhaul**: Eliminated center-block revolving turnstile behavior by creating dedicated open-state geometries with exact hinge pivots: `copycat_door_lower_open_left`, `copycat_door_lower_open_right`, `copycat_door_upper_open_left`, and `copycat_door_upper_open_right`.
+  2. **Permutation Decoupling**: Decoupled open/hinge state from cardinal direction rotation (`north`, `east`, `south`, `west`), ensuring the door and its collision box pivot perfectly on its hinge across all facings.
+  3. **Script ReferenceError Fix**: Resolved `ReferenceError: getShapeId is not defined` in `scripts/main.js` on playerBreakBlock by importing `getShapeId` from `./core/registry.js`.
+  4. **Wrench Molang Fix**: Replaced invalid token `{"use": "use"}` with `"use"` in `wrench.animation_controllers.json`.
+  5. **Hinge Neighbor Logic**: Fixed player-relative left/right door neighbor detection in `scripts/systems/door.js` for double-door placement.
+  6. **Datagen Rebuild & Deploy**: Regenerated all 87 door variant definitions and deployed to `development_*_packs/`.
+
 
 
 

@@ -981,7 +981,7 @@ export const REGISTRY = {
 		"baseSound": "copper",
 		"collisionDataVersion": "1.26.60",
 		"engineVersion": "1.26.60",
-		"fingerprint": "c615bbd9c331db39",
+		"fingerprint": "3ab75546cff8163b",
 		"generator": 1,
 		"separator": "__",
 		"stateName": "cc:material"

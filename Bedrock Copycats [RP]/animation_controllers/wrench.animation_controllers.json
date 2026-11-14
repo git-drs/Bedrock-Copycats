@@ -6,7 +6,7 @@
 				"default": {},
 				"use1st": {
 					"animations": [
-						{"use": "use"}
+						"use"
 					],
 					"particle_effects": [
 						{
