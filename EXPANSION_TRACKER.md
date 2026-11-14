@@ -95,3 +95,6 @@ For each block, the full lifecycle is:
   12. `cc:copycat_button`: 6-face attachment (walls, floor, ceiling), 30-tick pulse timer with click sounds (`button.js`), relative face redstone powering, 87 variants. (Commit: `6782350`)
 - **Step 7**: Datagen check verified 24 texturable shapes, 87 material groups, and 2,088 generated block variants.
 - **Step 8**: All commits pushed to GitHub repository `git-drs/Bedrock-Copycats` on branch `feat/all-copycat-blocks`.
+- **Step 9**: In-game validation fixes: adjusted `copycat_fence_gate` bounding boxes for `cc:in_wall` state to prevent negative origin coordinates, and bumped format version to `1.21.120` for `copycat_button` and `copycat_pressure_plate` to enable `minecraft:redstone_producer`. (Commit: `543edaa`)
+- **Step 10**: Official Java Create Model Conversion: Downloaded source models from official `copycats-plus/copycats` and `Creators-of-Create/Create` repositories. Converted all 12 block models to Bedrock format following Blockbench's conversion engine with exact sub-quadrant slicing, directional face UV mappings, and multi-permutation states. Regenerated all 2,088 block definitions and verified 0 errors.
+
