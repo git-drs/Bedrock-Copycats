@@ -1,9 +1,9 @@
 # datagen report
 
 - Minecraft snapshot: **1.26.60** (collision data 1.26.60)
-- Fingerprint: `b33517fcf5489e7a`
-- Materials: 450 | groups: 87 | texturable shapes: 18 | generated blocks: 1566
-- Last run: 87 created, 3 updated, 0 removed, 1490 unchanged
+- Fingerprint: `f794ffd4c2a79b35`
+- Materials: 450 | groups: 87 | texturable shapes: 19 | generated blocks: 1653
+- Last run: 87 created, 3 updated, 0 removed, 1577 unchanged
 - Supplemented from overrides.json: sea_lantern
 
 ## Skipped vanilla blocks
