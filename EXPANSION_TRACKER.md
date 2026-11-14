@@ -146,6 +146,14 @@ For each block, the full lifecycle is:
      - **Shift-Click**: Dismantles/picks up the block and places both the base copycat block and the textured material block directly inside the player's inventory.
      - Dispatched for both Wrench and Empty Hand (while preserving interaction for doors, buttons, fence gates, and trapdoors).
   5. **Verification & Deployment**: Verified with `npm run datagen:check` (2,102 files in sync) and deployed to `development_behavior_packs` and `development_resource_packs`.
+- **Step 18**: Ladder Collision Box & Selection Box Alignment Fix:
+  1. **Root Cause Analysis**: While the 3D visual geometry rotated properly (`rotation: [0, 270, 0]` for East and `[0, 90, 0]` for West), rotating the North-resting geometry ($Z \in [-8, -6]$) by $270^\circ$ places the visual mesh at $X \in [-8, -6]$ (West wall), but `selection_box` had been mistakenly assigned to `origin: [6, 0, -8]` ($X \in [6, 8]$). Conversely, rotating by $90^\circ$ places the visual mesh at $X \in [6, 8]$ (East wall), but `selection_box` had been assigned to `[-8, 0, -8]`. Furthermore, `minecraft:collision_box` was previously set to `false`, leaving the ladder with no physical collision.
+  2. **Aligned Collision & Selection Boxes**:
+     - `north`: `collision_box` & `selection_box` = `[-8, 0, -8]`, size `[16, 16, 2]` ($Z \in [-8, -6]$).
+     - `south`: `collision_box` & `selection_box` = `[-8, 0, 6]`, size `[16, 16, 2]` ($Z \in [6, 8]$).
+     - `east`: `collision_box` & `selection_box` = `[-8, 0, -8]`, size `[2, 16, 16]` ($X \in [-8, -6]$).
+     - `west`: `collision_box` & `selection_box` = `[6, 0, -8]`, size `[2, 16, 16]` ($X \in [6, 8]$).
+  3. **Datagen Rebuild & Deployment**: Regenerated all 87 `copycat_ladder__*.block.json` files via `npm run datagen`, verified with `npm run datagen:check`, and synced packs to `development_*_packs/`.
 
 
 
