@@ -1,0 +1,298 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__sand_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"black_concrete_powder",
+					"blue_concrete_powder",
+					"brown_concrete_powder",
+					"cyan_concrete_powder",
+					"gray_concrete_powder",
+					"green_concrete_powder",
+					"light_blue_concrete_powder",
+					"light_gray_concrete_powder",
+					"lime_concrete_powder",
+					"magenta_concrete_powder",
+					"orange_concrete_powder",
+					"pink_concrete_powder",
+					"purple_concrete_powder",
+					"red_concrete_powder",
+					"red_sand",
+					"sand"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_producer": {
+				"power": 0
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:redstone_producer": {
+						"power": 15
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'black_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "black_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'blue_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "blue_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'brown_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "brown_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cyan_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cyan_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_blue_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_blue_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_gray_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_gray_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'lime_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "lime_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magenta_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magenta_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "orange_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pink_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purple_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_concrete_powder",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_sand'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_sand",
+							"render_method": "alpha_test",
+							"isotropic": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'sand'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_sand",
+							"render_method": "alpha_test",
+							"isotropic": true
+						}
+					}
+				}
+			}
+		]
+	}
+}

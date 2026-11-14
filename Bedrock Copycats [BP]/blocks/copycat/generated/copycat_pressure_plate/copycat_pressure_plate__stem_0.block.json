@@ -1,0 +1,296 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__stem_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"crimson_hyphae",
+					"crimson_stem",
+					"stripped_crimson_hyphae",
+					"stripped_crimson_stem",
+					"stripped_warped_hyphae",
+					"stripped_warped_stem",
+					"warped_hyphae",
+					"warped_stem"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_producer": {
+				"power": 0
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:redstone_producer": {
+						"power": 15
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'crimson_hyphae'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "crimson_log_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'crimson_stem'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "crimson_log_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "crimson_log_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "crimson_log_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "crimson_log_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "crimson_log_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "crimson_log_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "crimson_log_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_crimson_hyphae'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_crimson_stem_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_crimson_stem'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_crimson_stem_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "stripped_crimson_stem_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "stripped_crimson_stem_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "stripped_crimson_stem_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "stripped_crimson_stem_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "stripped_crimson_stem_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "stripped_crimson_stem_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_warped_hyphae'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_warped_stem_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_warped_stem'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "stripped_warped_stem_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "stripped_warped_stem_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "stripped_warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "stripped_warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "stripped_warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "stripped_warped_stem_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'warped_hyphae'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "warped_stem_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'warped_stem'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "warped_stem_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "warped_stem_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "warped_stem_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "warped_stem_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

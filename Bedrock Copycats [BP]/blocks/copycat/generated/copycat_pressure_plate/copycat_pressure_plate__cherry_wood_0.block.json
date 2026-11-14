@@ -1,0 +1,212 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__cherry_wood_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"cherry_log",
+					"cherry_planks",
+					"cherry_wood",
+					"stripped_cherry_log",
+					"stripped_cherry_wood"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_producer": {
+				"power": 0
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:redstone_producer": {
+						"power": 15
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "cherry_log_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "cherry_log_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_planks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_cherry_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "stripped_cherry_log_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "stripped_cherry_log_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_cherry_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

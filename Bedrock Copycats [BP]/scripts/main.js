@@ -12,6 +12,7 @@ import "./systems/fence_gate.js";
 import "./systems/door.js";
 import "./systems/layer.js";
 import "./systems/lantern.js";
+import "./systems/pressurePlate.js";
 import "./systems/connections.js";
 
 export * from "./api.js";

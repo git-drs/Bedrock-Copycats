@@ -1,0 +1,188 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__normal_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"bee_nest",
+					"beehive",
+					"brick_block"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_producer": {
+				"power": 0
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:redstone_producer": {
+						"power": 15
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'bee_nest'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bee_nest_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "bee_nest_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "bee_nest_bottom",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "bee_nest_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "bee_nest_front",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "bee_nest_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "bee_nest_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'beehive'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "beehive_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "beehive_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "beehive_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "beehive_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "beehive_front",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "beehive_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "beehive_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'brick_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "brick",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

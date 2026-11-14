@@ -22,7 +22,7 @@ Status: **Phase 2 - Sequential Implementation (One-by-One)**
 | 8 | `cc:copycat_door` | Enclosures | Yes | `copycat_door.geo.json` | `copycat_door.block.json` | `copycat_door.json` | `door.js` (2-block multiblock) | ✅ Implemented |
 | 9 | `cc:copycat_layer` | Interactive | Yes | `copycat_layer.geo.json` | `copycat_layer.block.json` | `copycat_layer.json` | `layer.js` (1-8 slice stack/drop) | ✅ Implemented |
 | 10 | `cc:copycat_lantern` | Interactive | Yes | `copycat_lantern.geo.json` | `copycat_lantern.block.json` | `copycat_lantern.json` | `lantern.js` (hanging/emission 15)| ✅ Implemented |
-| 11 | `cc:copycat_pressure_plate`| Interactive| Yes | `copycat_pressure_plate.geo.json` | `copycat_pressure_plate.block.json` | `copycat_pressure_plate.json` | `pressure_plate.js` (step query)| ⏳ Pending |
+| 11 | `cc:copycat_pressure_plate`| Interactive| Yes | `copycat_pressure_plate.geo.json` | `copycat_pressure_plate.block.json` | `copycat_pressure_plate.json` | `pressure_plate.js` (step query)| ✅ Implemented |
 | 12 | `cc:copycat_button` | Interactive | Yes | `copycat_button.geo.json` | `copycat_button.block.json` | `copycat_button.json` | `button.js` (30-tick pulse) | ⏳ Pending |
 
 ---
