@@ -2112,6 +2112,270 @@
 	"cc:copycat_horizontal_pannel__wood_3": {
 		"sound": "wood"
 	},
+	"cc:copycat_ladder": {
+		"sound": "copper"
+	},
+	"cc:copycat_ladder__amethyst_block_0": {
+		"sound": "amethyst_block"
+	},
+	"cc:copycat_ladder__ancient_debris_0": {
+		"sound": "ancient_debris"
+	},
+	"cc:copycat_ladder__azalea_alpha_test_0": {
+		"sound": "azalea"
+	},
+	"cc:copycat_ladder__azalea_leaves_alpha_test_0": {
+		"sound": "azalea_leaves"
+	},
+	"cc:copycat_ladder__bamboo_wood_0": {
+		"sound": "bamboo_wood"
+	},
+	"cc:copycat_ladder__basalt_0": {
+		"sound": "basalt"
+	},
+	"cc:copycat_ladder__bone_block_0": {
+		"sound": "bone_block"
+	},
+	"cc:copycat_ladder__calcite_0": {
+		"sound": "calcite"
+	},
+	"cc:copycat_ladder__cherry_leaves_alpha_test_0": {
+		"sound": "cherry_leaves"
+	},
+	"cc:copycat_ladder__cherry_wood_0": {
+		"sound": "cherry_wood"
+	},
+	"cc:copycat_ladder__chiseled_bookshelf_0": {
+		"sound": "chiseled_bookshelf"
+	},
+	"cc:copycat_ladder__cinnabar_0": {
+		"sound": "cinnabar"
+	},
+	"cc:copycat_ladder__cloth_0": {
+		"sound": "cloth"
+	},
+	"cc:copycat_ladder__copper_0": {
+		"sound": "copper"
+	},
+	"cc:copycat_ladder__copper_1": {
+		"sound": "copper"
+	},
+	"cc:copycat_ladder__copper_bulb_0": {
+		"sound": "copper_bulb"
+	},
+	"cc:copycat_ladder__copper_grate_alpha_test_0": {
+		"sound": "copper_grate"
+	},
+	"cc:copycat_ladder__coral_0": {
+		"sound": "coral"
+	},
+	"cc:copycat_ladder__creaking_heart_0": {
+		"sound": "creaking_heart"
+	},
+	"cc:copycat_ladder__deepslate_0": {
+		"sound": "deepslate"
+	},
+	"cc:copycat_ladder__deepslate_bricks_0": {
+		"sound": "deepslate_bricks"
+	},
+	"cc:copycat_ladder__dirt_with_roots_0": {
+		"sound": "dirt_with_roots"
+	},
+	"cc:copycat_ladder__dripstone_block_0": {
+		"sound": "dripstone_block"
+	},
+	"cc:copycat_ladder__froglight_0": {
+		"sound": "froglight"
+	},
+	"cc:copycat_ladder__glass_0": {
+		"sound": "glass"
+	},
+	"cc:copycat_ladder__glass_alpha_test_0": {
+		"sound": "glass"
+	},
+	"cc:copycat_ladder__glass_blend_0": {
+		"sound": "glass"
+	},
+	"cc:copycat_ladder__glass_blend_1": {
+		"sound": "glass"
+	},
+	"cc:copycat_ladder__grass_0": {
+		"sound": "grass"
+	},
+	"cc:copycat_ladder__grass_alpha_test_0": {
+		"sound": "grass"
+	},
+	"cc:copycat_ladder__gravel_0": {
+		"sound": "gravel"
+	},
+	"cc:copycat_ladder__iron_0": {
+		"sound": "iron"
+	},
+	"cc:copycat_ladder__lodestone_0": {
+		"sound": "lodestone"
+	},
+	"cc:copycat_ladder__mangrove_roots_alpha_test_0": {
+		"sound": "mangrove_roots"
+	},
+	"cc:copycat_ladder__metal_0": {
+		"sound": "metal"
+	},
+	"cc:copycat_ladder__metal_blend_0": {
+		"sound": "metal"
+	},
+	"cc:copycat_ladder__mob_spawner_alpha_test_0": {
+		"sound": "mob_spawner"
+	},
+	"cc:copycat_ladder__moss_block_0": {
+		"sound": "moss_block"
+	},
+	"cc:copycat_ladder__mud_bricks_0": {
+		"sound": "mud_bricks"
+	},
+	"cc:copycat_ladder__muddy_mangrove_roots_0": {
+		"sound": "muddy_mangrove_roots"
+	},
+	"cc:copycat_ladder__nether_brick_0": {
+		"sound": "nether_brick"
+	},
+	"cc:copycat_ladder__nether_gold_ore_0": {
+		"sound": "nether_gold_ore"
+	},
+	"cc:copycat_ladder__nether_wart_0": {
+		"sound": "nether_wart"
+	},
+	"cc:copycat_ladder__nether_wood_0": {
+		"sound": "nether_wood"
+	},
+	"cc:copycat_ladder__netherite_0": {
+		"sound": "netherite"
+	},
+	"cc:copycat_ladder__netherrack_0": {
+		"sound": "netherrack"
+	},
+	"cc:copycat_ladder__normal_0": {
+		"sound": "normal"
+	},
+	"cc:copycat_ladder__nylium_0": {
+		"sound": "nylium"
+	},
+	"cc:copycat_ladder__packed_mud_0": {
+		"sound": "packed_mud"
+	},
+	"cc:copycat_ladder__polished_tuff_0": {
+		"sound": "polished_tuff"
+	},
+	"cc:copycat_ladder__poplar_leaves_alpha_test_0": {
+		"sound": "poplar_leaves"
+	},
+	"cc:copycat_ladder__potent_sulfur_0": {
+		"sound": "potent_sulfur"
+	},
+	"cc:copycat_ladder__resin_0": {
+		"sound": "resin"
+	},
+	"cc:copycat_ladder__resin_brick_0": {
+		"sound": "resin_brick"
+	},
+	"cc:copycat_ladder__sand_0": {
+		"sound": "sand"
+	},
+	"cc:copycat_ladder__sand_1": {
+		"sound": "sand"
+	},
+	"cc:copycat_ladder__sculk_0": {
+		"sound": "sculk"
+	},
+	"cc:copycat_ladder__sculk_catalyst_0": {
+		"sound": "sculk_catalyst"
+	},
+	"cc:copycat_ladder__shroomlight_0": {
+		"sound": "shroomlight"
+	},
+	"cc:copycat_ladder__slime_blend_0": {
+		"sound": "slime"
+	},
+	"cc:copycat_ladder__snow_0": {
+		"sound": "snow"
+	},
+	"cc:copycat_ladder__soul_soil_0": {
+		"sound": "soul_soil"
+	},
+	"cc:copycat_ladder__sponge_0": {
+		"sound": "sponge"
+	},
+	"cc:copycat_ladder__stem_0": {
+		"sound": "stem"
+	},
+	"cc:copycat_ladder__stone_0": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_1": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_2": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_3": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_4": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_5": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_6": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_7": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__stone_8": {
+		"sound": "stone"
+	},
+	"cc:copycat_ladder__sulfur_0": {
+		"sound": "sulfur"
+	},
+	"cc:copycat_ladder__suspicious_gravel_0": {
+		"sound": "suspicious_gravel"
+	},
+	"cc:copycat_ladder__suspicious_sand_0": {
+		"sound": "suspicious_sand"
+	},
+	"cc:copycat_ladder__terracotta_0": {
+		"sound": "terracotta"
+	},
+	"cc:copycat_ladder__terracotta_1": {
+		"sound": "terracotta"
+	},
+	"cc:copycat_ladder__trial_spawner_alpha_test_0": {
+		"sound": "trial_spawner"
+	},
+	"cc:copycat_ladder__tuff_0": {
+		"sound": "tuff"
+	},
+	"cc:copycat_ladder__tuff_bricks_0": {
+		"sound": "tuff_bricks"
+	},
+	"cc:copycat_ladder__vault_alpha_test_0": {
+		"sound": "vault"
+	},
+	"cc:copycat_ladder__wet_sponge_0": {
+		"sound": "wet_sponge"
+	},
+	"cc:copycat_ladder__wood_0": {
+		"sound": "wood"
+	},
+	"cc:copycat_ladder__wood_1": {
+		"sound": "wood"
+	},
+	"cc:copycat_ladder__wood_2": {
+		"sound": "wood"
+	},
+	"cc:copycat_ladder__wood_3": {
+		"sound": "wood"
+	},
 	"cc:copycat_pannel": {
 		"sound": "copper"
 	},

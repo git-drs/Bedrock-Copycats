@@ -6,10 +6,13 @@ import { isCopycat, isVariant, getMaterialItem, MATERIAL_STATE } from "./core/re
 import { handleTexturing } from "./systems/texturing.js";
 import { handleWrench } from "./systems/wrench.js";
 import { runVersionCheck } from "./systems/versionCheck.js";
+import { initLadderSystem } from "./systems/ladder.js";
 import "./systems/trapdoor.js";
 import "./systems/connections.js";
 
 export * from "./api.js";
+
+initLadderSystem();
 
 onBlockInteract((ctx) => {
   if (!ctx.item?.typeId || !ctx.block?.typeId || !ctx.player?.id) return;
