@@ -7,6 +7,7 @@ import { tryCooldown, blockKey } from "../core/cooldown.js";
 import { playSound } from "../core/sound.js";
 import { giveOrDrop } from "../core/compat.js";
 import { updateWithNeighbors } from "./connections.js";
+import { getDoorSibling } from "./door.js";
 
 /** Deduct 1 item from player's hand unless in creative mode */
 function consumeHeldItem(player, expectedTypeId) {
@@ -60,6 +61,12 @@ export function handleTexturing({ player, block, item, cancel }) {
       }
 
       current.setPermutation(permutationFrom(current.permutation, target.typeId, { [MATERIAL_STATE]: target.stateValue }));
+      if (shapeId === "cc:copycat_door") {
+        const sibling = getDoorSibling(current);
+        if (sibling) {
+          sibling.setPermutation(permutationFrom(sibling.permutation, target.typeId, { [MATERIAL_STATE]: target.stateValue }));
+        }
+      }
       consumeHeldItem(player, item.typeId);
       playSound(dimension, location, SOUNDS.textureAdd);
       playSound(dimension, location, target.sound?.place);

@@ -1,0 +1,863 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_door__stone_7",
+			"states": {
+				"cc:half": [
+					"lower",
+					"upper"
+				],
+				"cc:hinge": [
+					"left",
+					"right"
+				],
+				"cc:open": [
+					false,
+					true
+				],
+				"cc:material": [
+					"red_glazed_terracotta",
+					"red_sandstone",
+					"red_shulker_box",
+					"redstone_block",
+					"redstone_ore",
+					"sandstone",
+					"silver_glazed_terracotta",
+					"smoker",
+					"smooth_quartz",
+					"smooth_red_sandstone",
+					"smooth_sandstone",
+					"smooth_stone",
+					"sticky_piston",
+					"stone",
+					"stone_bricks",
+					"tube_coral_block"
+				]
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:door"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_door_lower"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"tag:doors": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 15
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_door.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:half') == 'upper'",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_door_upper"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							5
+						],
+						"size": [
+							16,
+							16,
+							3
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_glazed_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_redsandstone",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "flattened_redsandstone_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_redsandstone_bottom",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "flattened_redsandstone",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "flattened_redsandstone",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "flattened_redsandstone",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "flattened_redsandstone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_shulker_box",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'redstone_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "redstone_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'redstone_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "redstone_ore",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_sandstone",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "flattened_sandstone_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_sandstone_bottom",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "flattened_sandstone",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "flattened_sandstone",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "flattened_sandstone",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "flattened_sandstone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'silver_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "silver_glazed_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'smoker'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smoker_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "smoker_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "smoker_bottom",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "smoker_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "smoker_front_off",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "smoker_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "smoker_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'smooth_quartz'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smooth_quartz",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'smooth_red_sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smooth_red_sandstone",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "flattened_redsandstone_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_redsandstone_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "smooth_red_sandstone",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "smooth_red_sandstone",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "smooth_red_sandstone",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "smooth_red_sandstone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'smooth_sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smooth_sandstone",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "flattened_sandstone_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_sandstone_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "smooth_sandstone",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "smooth_sandstone",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "smooth_sandstone",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "smooth_sandstone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'smooth_stone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smooth_stone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'sticky_piston'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "piston_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "piston_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "piston_bottom",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "piston_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "piston_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "piston_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "piston_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_stone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stone_bricks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'tube_coral_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "tube_coral_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

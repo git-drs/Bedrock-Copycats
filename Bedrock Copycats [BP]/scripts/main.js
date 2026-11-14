@@ -9,6 +9,7 @@ import { runVersionCheck } from "./systems/versionCheck.js";
 import { initLadderSystem } from "./systems/ladder.js";
 import "./systems/trapdoor.js";
 import "./systems/fence_gate.js";
+import "./systems/door.js";
 import "./systems/connections.js";
 
 export * from "./api.js";

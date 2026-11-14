@@ -11,6 +11,7 @@ import { playSound } from "../core/sound.js";
 import { giveOrDrop } from "../core/compat.js";
 import { handleTransform } from "./transform.js";
 import { updateWithNeighbors } from "./connections.js";
+import { getDoorSibling } from "./door.js";
 
 export function handleWrench(ctx) {
   const { player, block, cancel } = ctx;
@@ -43,6 +44,10 @@ export function handleWrench(ctx) {
           giveOrDrop(player, dimension, location, new ItemStack(shapeId, 1));
         }
 
+        if (shapeId === "cc:copycat_door") {
+          const sibling = getDoorSibling(target);
+          if (sibling) dimension.setBlockType(sibling.location, "minecraft:air");
+        }
         dimension.setBlockType(location, "minecraft:air");
         playSound(dimension, location, SOUNDS.pickupPop);
         playSound(dimension, location, SOUNDS.pickupPlace);
@@ -55,6 +60,10 @@ export function handleWrench(ctx) {
         }
 
         target.setPermutation(permutationFrom(target.permutation, shapeId));
+        if (shapeId === "cc:copycat_door") {
+          const sibling = getDoorSibling(target);
+          if (sibling) sibling.setPermutation(permutationFrom(sibling.permutation, shapeId));
+        }
         playSound(dimension, location, SOUNDS.reset);
         updateWithNeighbors(target);
       }
