@@ -13,7 +13,7 @@ Status: **Phase 2 - Sequential Implementation (One-by-One)**
 | # | Block ID | Family | Texturable? | Geometry File | Base Block JSON | Loot Table | Script Integration | Status |
 |---|---|---|---|---|---|---|---|---|
 | 1 | `cc:copycat_vertical_slab` | Structural | Yes | `copycat_vertical_slab.geo.json` | `copycat_vertical_slab.block.json` | `copycat_vertical_slab.json` | `transform.js`, `wrench.js` | ✅ Implemented |
-| 2 | `cc:copycat_step` | Structural | Yes | `copycat_step.geo.json` | `copycat_step.block.json` | `copycat_step.json` | `transform.js`, `wrench.js` | ⏳ Pending |
+| 2 | `cc:copycat_step` | Structural | Yes | `copycat_step.geo.json` | `copycat_step.block.json` | `copycat_step.json` | `transform.js`, `wrench.js` | ✅ Implemented |
 | 3 | `cc:copycat_ladder` | Structural | Yes | `copycat_ladder.geo.json` | `copycat_ladder.block.json` | `copycat_ladder.json` | `ladder.js` (climb/sneak) | ⏳ Pending |
 | 4 | `cc:copycat_chain` | Structural | Yes | `copycat_chain.geo.json` | `copycat_chain.block.json` | `copycat_chain.json` | `transform.js` (3-axis cycle) | ⏳ Pending |
 | 5 | `cc:copycat_bars` | Enclosures | Yes | `copycat_bars.geo.json` | `copycat_bars.block.json` | `copycat_bars.json` | `connections.js` (4-way bars) | ⏳ Pending |
