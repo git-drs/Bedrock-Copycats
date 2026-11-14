@@ -114,6 +114,13 @@ For each block, the full lifecycle is:
   4. **Wrench Molang Fix**: Replaced invalid token `{"use": "use"}` with `"use"` in `wrench.animation_controllers.json`.
   5. **Hinge Neighbor Logic**: Fixed player-relative left/right door neighbor detection in `scripts/systems/door.js` for double-door placement.
   6. **Datagen Rebuild & Deploy**: Regenerated all 87 door variant definitions and deployed to `development_*_packs/`.
+- **Step 14**: Chain Vanilla 1:1 Geometric Pixel Cutouts & 45-Degree Rotation:
+  1. **Root Cause Analysis**: Identified why copycat chains previously had no empty pixels when textured: in vanilla Minecraft, chain links have empty pixels because `chain.png` has transparent cutouts drawn in the PNG. But solid copycat materials (like `oak_planks`, `stone`, `iron_block`) are 100% opaque textures with zero transparent pixels. Bedrock custom block materials do not support secondary texture alpha stencils/masks.
+  2. **Geometric Pixel Cutouts Solution**: Sliced `geometry.copycat_chain` into sub-quadrant geometry cubes matching the exact pixel grid of vanilla `chain.png` (Face 1: cols 0..3, Face 2: cols 3..6). Wherever vanilla chain has transparent pixels (in the hollow center of each link and between interlocking links), polygons are omitted completely.
+  3. **45-Degree Interlocking Cross**: Placed Plane A in `cross_a` (`rotation: [0, 45, 0]`) and Plane B in `cross_b` (`rotation: [0, -45, 0]`) anchored at pivot `[0, 8, 0]`. Plane A and Plane B pass cleanly through each other's hollow center holes without overlapping geometry or Z-fighting, exactly matching vanilla Minecraft chain.
+  4. **Full Axis Support**: Configured `geometry.copycat_chain` for Y, and kept `geometry.copycat_chain_x` and `geometry.copycat_chain_z` rotated meshes.
+  5. **Verification & Deployment**: Passed `npm run datagen:check` with 0 errors across 2,088 blocks; deployed updated resource and behavior packs to `/storage/emulated/0/games/com.mojang/development_*_packs/`.
+
 
 
 
