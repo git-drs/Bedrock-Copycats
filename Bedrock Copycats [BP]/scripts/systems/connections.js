@@ -48,10 +48,26 @@ function updateConnections(block) {
   if (!cfg) return;
   let perm = block.permutation, changed = false;
   const current = perm.getAllStates();
+  const connectedMap = {};
   for (const dir of cfg.directions) {
     const stateName = `${cfg.prefix}${dir}_connected`;
     const want = shouldConnect(neighborAt(block, DIRECTIONS[dir]), cfg);
+    connectedMap[dir] = want;
     if (current[stateName] !== undefined && current[stateName] !== want) { perm = perm.withState(stateName, want); changed = true; }
+  }
+  if (current["cc:wall_post"] !== undefined) {
+    const n = connectedMap.north ?? perm.getState("cc:north_connected");
+    const s = connectedMap.south ?? perm.getState("cc:south_connected");
+    const e = connectedMap.east ?? perm.getState("cc:east_connected");
+    const w = connectedMap.west ?? perm.getState("cc:west_connected");
+    const isStraightLine = (n && s && !e && !w) || (e && w && !n && !s);
+    const above = neighborAt(block, DIRECTIONS.up);
+    const hasAbove = above && above.typeId !== "minecraft:air";
+    const wantPost = !isStraightLine || hasAbove;
+    if (current["cc:wall_post"] !== wantPost) {
+      perm = perm.withState("cc:wall_post", wantPost);
+      changed = true;
+    }
   }
   if (changed) { try { block.setPermutation(perm); } catch (e) { console.warn(`[copycat] connection update failed: ${e}`); } }
 }

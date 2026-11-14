@@ -17,7 +17,7 @@ Status: **Phase 2 - Sequential Implementation (One-by-One)**
 | 3 | `cc:copycat_ladder` | Structural | Yes | `copycat_ladder.geo.json` | `copycat_ladder.block.json` | `copycat_ladder.json` | `ladder.js` (climb/sneak) | ✅ Implemented |
 | 4 | `cc:copycat_chain` | Structural | Yes | `copycat_chain.geo.json` | `copycat_chain.block.json` | `copycat_chain.json` | `transform.js` (3-axis cycle) | ✅ Implemented |
 | 5 | `cc:copycat_bars` | Enclosures | Yes | `copycat_bars.geo.json` | `copycat_bars.block.json` | `copycat_bars.json` | `connections.js` (4-way bars) | ✅ Implemented |
-| 6 | `cc:copycat_wall` | Enclosures | Yes | `copycat_wall.geo.json` | `copycat_wall.block.json` | `copycat_wall.json` | `connections.js` (post + 24px col) | ⏳ Pending |
+| 6 | `cc:copycat_wall` | Enclosures | Yes | `copycat_wall.geo.json` | `copycat_wall.block.json` | `copycat_wall.json` | `connections.js` (post + 24px col) | ✅ Implemented |
 | 7 | `cc:copycat_fence_gate` | Enclosures | Yes | `copycat_fence_gate.geo.json` | `copycat_fence_gate.block.json` | `copycat_fence_gate.json` | `fence_gate.js` (swing/in-wall) | ⏳ Pending |
 | 8 | `cc:copycat_door` | Enclosures | Yes | `copycat_door.geo.json` | `copycat_door.block.json` | `copycat_door.json` | `door.js` (2-block multiblock) | ⏳ Pending |
 | 9 | `cc:copycat_layer` | Interactive | Yes | `copycat_layer.geo.json` | `copycat_layer.block.json` | `copycat_layer.json` | `layer.js` (1-8 slice stack/drop) | ⏳ Pending |
