@@ -154,6 +154,28 @@ For each block, the full lifecycle is:
      - `east`: `collision_box` & `selection_box` = `[-8, 0, -8]`, size `[2, 16, 16]` ($X \in [-8, -6]$).
      - `west`: `collision_box` & `selection_box` = `[6, 0, -8]`, size `[2, 16, 16]` ($X \in [6, 8]$).
   3. **Datagen Rebuild & Deployment**: Regenerated all 87 `copycat_ladder__*.block.json` files via `npm run datagen`, verified with `npm run datagen:check`, and synced packs to `development_*_packs/`.
+- **Step 19**: Wall Attachment Realignment (Ladder & Button) + Iron Bars 1:1 Geometric Pixel Cutouts:
+  1. **Ladder Wall Attachment Realignment (`copycat_ladder.block.json`)**:
+     - Enabled trait `minecraft:placement_position` with `minecraft:block_face` alongside `minecraft:cardinal_direction`.
+     - Synced each clicked wall face to its exact physical wall attachment and box:
+       - Placed on **South** face of wall block (`block_face == 'south'` or facing `north`): attaches to **North** side of ladder block ($Z \in [-8, -6]$), `rotation: [0, 0, 0]`, collision & selection box `origin: [-8, 0, -8], size: [16, 16, 2]`.
+       - Placed on **North** face of wall block (`block_face == 'north'` or facing `south`): attaches to **South** side of ladder block ($Z \in [6, 8]$), `rotation: [0, 180, 0]`, collision & selection box `origin: [-8, 0, 6], size: [16, 16, 2]`.
+       - Placed on **West** face of wall block (`block_face == 'west'` or facing `east`): attaches to **East** side of ladder block ($X \in [6, 8]$), `rotation: [0, 90, 0]`, collision & selection box `origin: [6, 0, -8], size: [2, 16, 16]`.
+       - Placed on **East** face of wall block (`block_face == 'east'` or facing `west`): attaches to **West** side of ladder block ($X \in [-8, -6]$), `rotation: [0, 270, 0]`, collision & selection box `origin: [-8, 0, -8], size: [2, 16, 16]`.
+  2. **Button Wall Attachment Realignment (`copycat_button.block.json`)**:
+     - Corrected wall permutation rotations and selection boxes:
+       - `block_face == 'south'`: attaches to North wall ($Z \in [-8, -6]$), `rotation: [90, 0, 0]`, `origin: [-3, 6, -8], size: [6, 4, 2]`.
+       - `block_face == 'north'`: attaches to South wall ($Z \in [6, 8]$), `rotation: [-90, 0, 0]`, `origin: [-3, 6, 6], size: [6, 4, 2]`.
+       - `block_face == 'west'`: attaches to East wall ($X \in [6, 8]$), `rotation: [0, 0, 90]`, `origin: [6, 5, -2], size: [2, 6, 4]`.
+       - `block_face == 'east'`: attaches to West wall ($X \in [-8, -6]$), `rotation: [0, 0, -90]`, `origin: [-8, 5, -2], size: [2, 6, 4]`.
+  3. **Iron Bars Vanilla 1:1 Geometric Pixel Cutouts (`copycat_bars.geo.json`)**:
+     - Mapped vanilla `iron_bars.png` 16x16 pixel cutout transparency: vertical posts at columns 2..3, 7..8 (center), 12..13; crossbars at rows 2..3, 7..8, 12..13.
+     - Regenerated all 21 modular geometries (`post`, `side`, `straight`, `side2`, `tee`, `quad` + directional variants) with sub-cubes matching the exact vanilla cutouts with 1:1 world UV mapping. All solid materials textured onto copycat bars now have authentic empty pixel windows identical to vanilla iron bars.
+  4. **Datagen Rebuild, Validation & Auto-Deploy**:
+     - Ran `npm run datagen`: all 174 ladder and button variants updated, all 2,088 copycat blocks compiled.
+     - Ran `npm run datagen:check`: 2,102 files clean with 0 errors.
+     - Automatically synced all updated BP and RP files to `/data/data/com.termux/files/home/storage/shared/games/com.mojang/development_*_packs/`.
+
 
 
 

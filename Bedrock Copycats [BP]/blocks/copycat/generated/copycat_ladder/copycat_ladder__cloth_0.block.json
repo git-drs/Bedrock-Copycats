@@ -4,6 +4,11 @@
 		"description": {
 			"identifier": "cc:copycat_ladder__cloth_0",
 			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				},
 				"minecraft:placement_direction": {
 					"enabled_states": [
 						"minecraft:cardinal_direction"
@@ -92,7 +97,7 @@
 		},
 		"permutations": [
 			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"condition": "q.block_state('minecraft:block_face') == 'south' || (!q.block_state('minecraft:block_face') && q.block_state('minecraft:cardinal_direction') == 'north')",
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
@@ -128,7 +133,7 @@
 				}
 			},
 			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"condition": "q.block_state('minecraft:block_face') == 'north' || (!q.block_state('minecraft:block_face') && q.block_state('minecraft:cardinal_direction') == 'south')",
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
@@ -164,43 +169,7 @@
 				}
 			},
 			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
-				"components": {
-					"minecraft:transformation": {
-						"rotation": [
-							0,
-							270,
-							0
-						]
-					},
-					"minecraft:collision_box": {
-						"origin": [
-							-8,
-							0,
-							-8
-						],
-						"size": [
-							2,
-							16,
-							16
-						]
-					},
-					"minecraft:selection_box": {
-						"origin": [
-							-8,
-							0,
-							-8
-						],
-						"size": [
-							2,
-							16,
-							16
-						]
-					}
-				}
-			},
-			{
-				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"condition": "q.block_state('minecraft:block_face') == 'west' || (!q.block_state('minecraft:block_face') && q.block_state('minecraft:cardinal_direction') == 'east')",
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
@@ -224,6 +193,42 @@
 					"minecraft:selection_box": {
 						"origin": [
 							6,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'east' || (!q.block_state('minecraft:block_face') && q.block_state('minecraft:cardinal_direction') == 'west')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
 							0,
 							-8
 						],

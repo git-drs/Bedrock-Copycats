@@ -72,30 +72,6 @@
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
-							90,
-							0,
-							0
-						]
-					},
-					"minecraft:selection_box": {
-						"origin": [
-							-3,
-							6,
-							-8
-						],
-						"size": [
-							6,
-							4,
-							2
-						]
-					}
-				}
-			},
-			{
-				"condition": "q.block_state('minecraft:block_face') == 'south'",
-				"components": {
-					"minecraft:transformation": {
-						"rotation": [
 							-90,
 							0,
 							0
@@ -116,18 +92,42 @@
 				}
 			},
 			{
+				"condition": "q.block_state('minecraft:block_face') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-3,
+							6,
+							-8
+						],
+						"size": [
+							6,
+							4,
+							2
+						]
+					}
+				}
+			},
+			{
 				"condition": "q.block_state('minecraft:block_face') == 'west'",
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
 							0,
 							0,
-							-90
+							90
 						]
 					},
 					"minecraft:selection_box": {
 						"origin": [
-							-8,
+							6,
 							5,
 							-2
 						],
@@ -146,12 +146,12 @@
 						"rotation": [
 							0,
 							0,
-							90
+							-90
 						]
 					},
 					"minecraft:selection_box": {
 						"origin": [
-							6,
+							-8,
 							5,
 							-2
 						],
