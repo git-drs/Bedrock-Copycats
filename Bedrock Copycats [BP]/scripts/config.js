@@ -39,4 +39,9 @@ export const CONNECTION_RULES = {
     tag: "fences",
     denyList: ["slab", "stair", "trapdoor", "pannel", "board", "beam", "lantern", "torch", "layer", "grass", "pane"],
   },
+  "cc:copycat_bars": {
+    rule: "blacklist",
+    tag: "bars",
+    denyList: ["slab", "stair", "trapdoor", "pannel", "board", "beam", "lantern", "torch", "layer", "grass"],
+  },
 };

@@ -25,12 +25,14 @@ function connectionConfig(typeId) {
 function shouldConnect(neighbor, cfg) {
   if (!neighbor || neighbor.typeId === "minecraft:air") return false;
   const neighborShape = getShapeId(neighbor.typeId);
+  if (neighborShape === cfg.shapeId) return true;
+  if (neighborShape === "cc:copycat_block") return true;
   switch (cfg.rule) {
     case "self": return neighborShape === cfg.shapeId;
     case "tag": return safeHasTag(neighbor, cfg.tag);
     case "whitelist": return (cfg.allowList ?? []).some((id) => id === neighbor.typeId || id === neighborShape);
     case "blacklist": {
-      if (cfg.tag && !safeHasTag(neighbor, cfg.tag)) return false;
+      if (cfg.tag && safeHasTag(neighbor, cfg.tag)) return true;
       const name = (neighborShape ?? neighbor.typeId).toLowerCase(); // match against the BASE id, not the variant suffix
       return !(cfg.denyList ?? []).some((w) => name.includes(w.toLowerCase()));
     }
