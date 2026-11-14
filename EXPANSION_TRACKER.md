@@ -130,6 +130,14 @@ For each block, the full lifecycle is:
   7. **Fence Gate (`copycat_fence_gate.geo.json`)**: Corrected open gate leaf UV dimensions to match rotated 3D coordinates.
   8. **Fence & Board (`copycat_fence.geo.json`, `copycat_board.geo.json`)**: Stripped 336 degenerate `[0, 0]` UV faces and corrected board 16x2x16 mapping.
   9. **Rebuild & Deployment**: Verified 0 UV errors across all 25 block shapes and 2,088 generated block variants; deployed to development packs.
+- **Step 16**: Ladder & Button Spatial Alignment & Dynamic Selection Box Synchronization:
+  1. **Root Cause Analysis (Ladder)**: In `copycat_ladder.block.json`, `cardinal_direction` permutations for `east` and `west` had swapped rotations (`[0, 90, 0]` vs `[0, 270, 0]`), causing the visual ladder to face the opposite wall. Furthermore, `minecraft:selection_box` was omitted from permutations, causing the selection outline to remain stuck at the North wall (`Z: -8..-6`) in all 4 cardinal directions.
+  2. **Root Cause Analysis (Button)**: In `copycat_button.geo.json`, the button was modeled hovering at $Y \in [6, 10]$ in mid-air instead of on the floor ($Y \in [0, 2]$). When rotated by `[90, 0, 0]` on walls, the mid-air offset displaced the mesh into the floor/wall boundary. Additionally, `selection_box` was missing from wall/ceiling permutations, leaving the selection outline permanently on the floor.
+  3. **Button Geometry Standardization (`copycat_button.geo.json`)**: Standardized `geometry.copycat_button_unpressed` ($Y \in [0, 2]$) and `pressed` ($Y \in [0, 1]$) resting on the floor with exact 1:1 UV coordinates.
+  4. **Button Permutation & Selection Overhaul (`copycat_button.block.json`)**: Configured canonical 6-face rotations matching Bedrock documentation: `up` (`[0, 0, 0]`), `down` (`[180, 0, 0]`), `north` (`[90, 0, 0]`), `south` (`[-90, 0, 0]`), `west` (`[0, 0, -90]`), `east` (`[0, 0, 90]`). Added exact wall/ceiling/floor `selection_box` definitions to every permutation.
+  5. **Ladder Rotation & Selection Synchronization (`copycat_ladder.block.json`)**: Corrected `east` (`[0, 270, 0]`) and `west` (`[0, 90, 0]`) rotations. Added matching `selection_box` per cardinal direction: North (`[-8, 0, -8], [16, 16, 2]`), South (`[-8, 0, 6], [16, 16, 2]`), East (`[6, 0, -8], [2, 16, 16]`), West (`[-8, 0, -8], [2, 16, 16]`).
+  6. **Rebuild & Deployment**: Regenerated all 174 ladder and button block variant files via `npm run datagen` and deployed directly to `development_behavior_packs` and `development_resource_packs`.
+
 
 
 
