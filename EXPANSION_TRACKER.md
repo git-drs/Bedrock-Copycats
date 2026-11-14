@@ -120,6 +120,17 @@ For each block, the full lifecycle is:
   3. **45-Degree Interlocking Cross**: Placed Plane A in `cross_a` (`rotation: [0, 45, 0]`) and Plane B in `cross_b` (`rotation: [0, -45, 0]`) anchored at pivot `[0, 8, 0]`. Plane A and Plane B pass cleanly through each other's hollow center holes without overlapping geometry or Z-fighting, exactly matching vanilla Minecraft chain.
   4. **Full Axis Support**: Configured `geometry.copycat_chain` for Y, and kept `geometry.copycat_chain_x` and `geometry.copycat_chain_z` rotated meshes.
   5. **Verification & Deployment**: Passed `npm run datagen:check` with 0 errors across 2,088 blocks; deployed updated resource and behavior packs to `/storage/emulated/0/games/com.mojang/development_*_packs/`.
+- **Step 15**: Comprehensive Model UV Audit & Texture Alignment Across All Broken Blocks:
+  1. **Master Audit**: Audited all 25 model geometries across all faces and dimensions, discovering distorted, squashed, degenerate, and swapped UV mappings across 8 blocks.
+  2. **Door Overhaul (`copycat_door.geo.json`)**: Replaced broken 4-cube Java conversion with canonical 16x16x3 panel (and 3x16x16 open panels) with exact 1:1 UV coordinates, eliminating zero-area faces and stretched textures.
+  3. **Wall Overhaul (`copycat_wall.geo.json`)**: Standardized 8x16x8 centered post with sub-quadrant UVs (`[4, 0]`, size `[8, 16]`) and 6x14x4 connection arms with world-aligned UVs; eliminated swapped X/Z dimensions and preserved all canonical and legacy geometries.
+  4. **Vertical Slab (`copycat_vertical_slab.geo.json`)**: Consolidated two 4-thick split cubes into a canonical 16x16x8 cube with exact 1:1 UV mapping, resolving the 400% vertical texture stretch.
+  5. **Layer Slices (`copycat_layer.geo.json`)**: Fixed all 8 layer geometries from degenerate 1-pixel height to exact $H = h \times 2$ (2..16px) with matching UV coordinates.
+  6. **Pressure Plate (`copycat_pressure_plate.geo.json`)**: Fixed swapped width/height on east/west faces.
+  7. **Fence Gate (`copycat_fence_gate.geo.json`)**: Corrected open gate leaf UV dimensions to match rotated 3D coordinates.
+  8. **Fence & Board (`copycat_fence.geo.json`, `copycat_board.geo.json`)**: Stripped 336 degenerate `[0, 0]` UV faces and corrected board 16x2x16 mapping.
+  9. **Rebuild & Deployment**: Verified 0 UV errors across all 25 block shapes and 2,088 generated block variants; deployed to development packs.
+
 
 
 

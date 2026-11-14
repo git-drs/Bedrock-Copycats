@@ -32,54 +32,10 @@
 							"size": [
 								16,
 								16,
-								4
+								8
 							],
 							"uv": {
 								"north": {
-									"uv": [
-										0,
-										12
-									],
-									"uv_size": [
-										16,
-										4
-									],
-									"material_instance": "north"
-								},
-								"west": {
-									"uv": [
-										0,
-										12
-									],
-									"uv_size": [
-										16,
-										4
-									],
-									"material_instance": "west"
-								},
-								"south": {
-									"uv": [
-										0,
-										12
-									],
-									"uv_size": [
-										16,
-										4
-									],
-									"material_instance": "south"
-								},
-								"east": {
-									"uv": [
-										0,
-										12
-									],
-									"uv_size": [
-										16,
-										4
-									],
-									"material_instance": "east"
-								},
-								"down": {
 									"uv": [
 										0,
 										0
@@ -88,43 +44,7 @@
 										16,
 										16
 									],
-									"material_instance": "down"
-								}
-							}
-						},
-						{
-							"origin": [
-								-8,
-								0,
-								-4
-							],
-							"size": [
-								16,
-								16,
-								4
-							],
-							"uv": {
-								"north": {
-									"uv": [
-										0,
-										0
-									],
-									"uv_size": [
-										16,
-										4
-									],
 									"material_instance": "north"
-								},
-								"west": {
-									"uv": [
-										0,
-										0
-									],
-									"uv_size": [
-										16,
-										4
-									],
-									"material_instance": "west"
 								},
 								"south": {
 									"uv": [
@@ -133,18 +53,29 @@
 									],
 									"uv_size": [
 										16,
-										4
+										16
 									],
 									"material_instance": "south"
 								},
-								"east": {
+								"west": {
 									"uv": [
 										0,
 										0
 									],
 									"uv_size": [
-										16,
-										4
+										8,
+										16
+									],
+									"material_instance": "west"
+								},
+								"east": {
+									"uv": [
+										8,
+										0
+									],
+									"uv_size": [
+										8,
+										16
 									],
 									"material_instance": "east"
 								},
@@ -155,9 +86,20 @@
 									],
 									"uv_size": [
 										16,
-										16
+										8
 									],
 									"material_instance": "up"
+								},
+								"down": {
+									"uv": [
+										0,
+										8
+									],
+									"uv_size": [
+										16,
+										8
+									],
+									"material_instance": "down"
 								}
 							}
 						}

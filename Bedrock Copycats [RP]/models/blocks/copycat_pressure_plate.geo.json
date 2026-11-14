@@ -25,237 +25,79 @@
 					"cubes": [
 						{
 							"origin": [
-								0,
-								0,
-								-7
-							],
-							"size": [
-								7,
-								1,
-								7
-							],
-							"uv": {
-								"north": {
-									"uv": [
-										9,
-										0
-									],
-									"uv_size": [
-										7,
-										1
-									],
-									"material_instance": "north"
-								},
-								"east": {
-									"uv": [
-										15,
-										0
-									],
-									"uv_size": [
-										1,
-										7
-									],
-									"material_instance": "east",
-									"uv_rotation": 270
-								},
-								"up": {
-									"uv": [
-										0,
-										0
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "up"
-								},
-								"down": {
-									"uv": [
-										0,
-										9
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "down"
-								}
-							}
-						},
-						{
-							"origin": [
-								-7,
-								0,
-								0
-							],
-							"size": [
-								7,
-								1,
-								7
-							],
-							"uv": {
-								"west": {
-									"uv": [
-										0,
-										9
-									],
-									"uv_size": [
-										1,
-										7
-									],
-									"material_instance": "west",
-									"uv_rotation": 90
-								},
-								"south": {
-									"uv": [
-										0,
-										15
-									],
-									"uv_size": [
-										7,
-										1
-									],
-									"material_instance": "south",
-									"uv_rotation": 180
-								},
-								"up": {
-									"uv": [
-										9,
-										9
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "up"
-								},
-								"down": {
-									"uv": [
-										9,
-										0
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "down"
-								}
-							}
-						},
-						{
-							"origin": [
 								-7,
 								0,
 								-7
 							],
 							"size": [
-								7,
+								14,
 								1,
-								7
+								14
 							],
 							"uv": {
 								"north": {
 									"uv": [
-										0,
-										0
+										1,
+										15
 									],
 									"uv_size": [
-										7,
+										14,
 										1
 									],
 									"material_instance": "north"
 								},
-								"west": {
-									"uv": [
-										0,
-										0
-									],
-									"uv_size": [
-										1,
-										7
-									],
-									"material_instance": "west",
-									"uv_rotation": 90
-								},
-								"up": {
-									"uv": [
-										9,
-										0
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "up"
-								},
-								"down": {
-									"uv": [
-										9,
-										9
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "down"
-								}
-							}
-						},
-						{
-							"origin": [
-								0,
-								0,
-								0
-							],
-							"size": [
-								7,
-								1,
-								7
-							],
-							"uv": {
 								"south": {
 									"uv": [
-										9,
+										1,
 										15
 									],
 									"uv_size": [
-										7,
+										14,
 										1
 									],
-									"material_instance": "south",
-									"uv_rotation": 180
+									"material_instance": "south"
 								},
 								"east": {
 									"uv": [
-										15,
-										9
+										1,
+										15
 									],
 									"uv_size": [
-										1,
-										7
+										14,
+										1
 									],
-									"material_instance": "east",
-									"uv_rotation": 270
+									"material_instance": "east"
+								},
+								"west": {
+									"uv": [
+										1,
+										15
+									],
+									"uv_size": [
+										14,
+										1
+									],
+									"material_instance": "west"
 								},
 								"up": {
 									"uv": [
-										0,
-										9
+										15,
+										15
 									],
 									"uv_size": [
-										7,
-										7
+										-14,
+										-14
 									],
 									"material_instance": "up"
 								},
 								"down": {
 									"uv": [
-										0,
-										0
+										15,
+										15
 									],
 									"uv_size": [
-										7,
-										7
+										-14,
+										-14
 									],
 									"material_instance": "down"
 								}
@@ -289,237 +131,79 @@
 					"cubes": [
 						{
 							"origin": [
-								0,
-								0,
-								-7
-							],
-							"size": [
-								7,
-								0.5,
-								7
-							],
-							"uv": {
-								"north": {
-									"uv": [
-										9,
-										0
-									],
-									"uv_size": [
-										7,
-										1
-									],
-									"material_instance": "north"
-								},
-								"east": {
-									"uv": [
-										15,
-										0
-									],
-									"uv_size": [
-										1,
-										7
-									],
-									"material_instance": "east",
-									"uv_rotation": 270
-								},
-								"up": {
-									"uv": [
-										0,
-										0
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "up"
-								},
-								"down": {
-									"uv": [
-										0,
-										9
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "down"
-								}
-							}
-						},
-						{
-							"origin": [
-								-7,
-								0,
-								0
-							],
-							"size": [
-								7,
-								0.5,
-								7
-							],
-							"uv": {
-								"west": {
-									"uv": [
-										0,
-										9
-									],
-									"uv_size": [
-										1,
-										7
-									],
-									"material_instance": "west",
-									"uv_rotation": 90
-								},
-								"south": {
-									"uv": [
-										0,
-										15
-									],
-									"uv_size": [
-										7,
-										1
-									],
-									"material_instance": "south",
-									"uv_rotation": 180
-								},
-								"up": {
-									"uv": [
-										9,
-										9
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "up"
-								},
-								"down": {
-									"uv": [
-										9,
-										0
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "down"
-								}
-							}
-						},
-						{
-							"origin": [
 								-7,
 								0,
 								-7
 							],
 							"size": [
-								7,
+								14,
 								0.5,
-								7
+								14
 							],
 							"uv": {
 								"north": {
 									"uv": [
-										0,
-										0
+										1,
+										15.5
 									],
 									"uv_size": [
-										7,
-										1
+										14,
+										0.5
 									],
 									"material_instance": "north"
 								},
-								"west": {
-									"uv": [
-										0,
-										0
-									],
-									"uv_size": [
-										1,
-										7
-									],
-									"material_instance": "west",
-									"uv_rotation": 90
-								},
-								"up": {
-									"uv": [
-										9,
-										0
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "up"
-								},
-								"down": {
-									"uv": [
-										9,
-										9
-									],
-									"uv_size": [
-										7,
-										7
-									],
-									"material_instance": "down"
-								}
-							}
-						},
-						{
-							"origin": [
-								0,
-								0,
-								0
-							],
-							"size": [
-								7,
-								0.5,
-								7
-							],
-							"uv": {
 								"south": {
 									"uv": [
-										9,
-										15
+										1,
+										15.5
 									],
 									"uv_size": [
-										7,
-										1
+										14,
+										0.5
 									],
-									"material_instance": "south",
-									"uv_rotation": 180
+									"material_instance": "south"
 								},
 								"east": {
 									"uv": [
-										15,
-										9
+										1,
+										15.5
 									],
 									"uv_size": [
-										1,
-										7
+										14,
+										0.5
 									],
-									"material_instance": "east",
-									"uv_rotation": 270
+									"material_instance": "east"
+								},
+								"west": {
+									"uv": [
+										1,
+										15.5
+									],
+									"uv_size": [
+										14,
+										0.5
+									],
+									"material_instance": "west"
 								},
 								"up": {
 									"uv": [
-										0,
-										9
+										15,
+										15
 									],
 									"uv_size": [
-										7,
-										7
+										-14,
+										-14
 									],
 									"material_instance": "up"
 								},
 								"down": {
 									"uv": [
-										0,
-										0
+										15,
+										15
 									],
 									"uv_size": [
-										7,
-										7
+										-14,
+										-14
 									],
 									"material_instance": "down"
 								}
