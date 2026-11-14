@@ -1,0 +1,418 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_block__stone_1",
+			"states": {
+				"cc:material": [
+					"chiseled_polished_blackstone",
+					"chiseled_quartz_block",
+					"chiseled_red_sandstone",
+					"chiseled_sandstone",
+					"chiseled_stone_bricks",
+					"chorus_flower",
+					"coal_block",
+					"coal_ore",
+					"cobblestone",
+					"copper_ore",
+					"cracked_polished_blackstone_bricks",
+					"cracked_stone_bricks",
+					"crafter",
+					"crying_obsidian",
+					"cut_red_sandstone",
+					"cut_sandstone"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided_to_opaque"
+				}
+			},
+			"minecraft:map_color": "#ff7328",
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_block.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:material') == 'chiseled_polished_blackstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chiseled_polished_blackstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'chiseled_quartz_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chiseled_quartz_block_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "chiseled_quartz_block_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "chiseled_quartz_block_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "chiseled_quartz_block_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "chiseled_quartz_block_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "chiseled_quartz_block_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "chiseled_quartz_block_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'chiseled_red_sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chiseled_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "flattened_redsandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_redsandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "chiseled_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "chiseled_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "chiseled_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "chiseled_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'chiseled_sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chiseled_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "flattened_sandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_sandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "chiseled_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "chiseled_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "chiseled_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "chiseled_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'chiseled_stone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chiseled_stone_bricks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'chorus_flower'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chorus_flower",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'coal_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coal_block",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'coal_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coal_ore",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cobblestone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cobblestone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'copper_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "copper_ore",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cracked_polished_blackstone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cracked_polished_blackstone_bricks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cracked_stone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cracked_stone_bricks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'crafter'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "crafter_north",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "crafter_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "crafter_bottom",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "crafter_north",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "crafter_south",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "crafter_east",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "crafter_west",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'crying_obsidian'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "crying_obsidian",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						}
+					},
+					"minecraft:light_emission": 10
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cut_red_sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cut_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "flattened_redsandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_redsandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "cut_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "cut_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "cut_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "cut_red_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cut_sandstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cut_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "flattened_sandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "flattened_sandstone_top",
+							"render_method": "alpha_test_single_sided_to_opaque",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "cut_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "cut_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "cut_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "cut_sandstone",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			}
+		]
+	}
+}

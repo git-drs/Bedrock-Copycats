@@ -1,0 +1,327 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_horizontal_pannel__sand_0",
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:vertical_half"
+					]
+				}
+			},
+			"states": {
+				"cc:material": [
+					"black_concrete_powder",
+					"blue_concrete_powder",
+					"brown_concrete_powder",
+					"cyan_concrete_powder",
+					"gray_concrete_powder",
+					"green_concrete_powder",
+					"light_blue_concrete_powder",
+					"light_gray_concrete_powder",
+					"lime_concrete_powder",
+					"magenta_concrete_powder",
+					"orange_concrete_powder",
+					"pink_concrete_powder",
+					"purple_concrete_powder",
+					"red_concrete_powder",
+					"red_sand",
+					"sand"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					3,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					3,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_pannel",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided"
+				}
+			},
+			"minecraft:map_color": "#ff6c2b",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_horizontal_pannel.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							180
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'black_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "black_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'blue_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "blue_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'brown_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "brown_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cyan_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cyan_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_blue_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_blue_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_gray_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_gray_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'lime_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "lime_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magenta_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magenta_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "orange_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pink_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purple_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_concrete_powder'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_concrete_powder",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_sand'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_sand",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'sand'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_sand",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						}
+					}
+				}
+			}
+		]
+	}
+}

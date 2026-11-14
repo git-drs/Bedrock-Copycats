@@ -1,0 +1,191 @@
+import fs from "fs";
+import path from "path";
+
+const perms = [
+  // 1-way
+  {
+    condition: "q.block_state('cc:north_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+    components: {
+      "minecraft:collision_box": { "origin": [-4, 0, -8], "size": [8, 24, 12] },
+      "minecraft:selection_box": { "origin": [-4, 0, -8], "size": [8, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:south_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 180, 0] },
+      "minecraft:collision_box": { "origin": [-4, 0, -8], "size": [8, 24, 12] },
+      "minecraft:selection_box": { "origin": [-4, 0, -8], "size": [8, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:east_connected') && !q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 270, 0] },
+      "minecraft:collision_box": { "origin": [-4, 0, -8], "size": [8, 24, 12] },
+      "minecraft:selection_box": { "origin": [-4, 0, -8], "size": [8, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:west_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 90, 0] },
+      "minecraft:collision_box": { "origin": [-4, 0, -8], "size": [8, 24, 12] },
+      "minecraft:selection_box": { "origin": [-4, 0, -8], "size": [8, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side" }
+    }
+  },
+  // 2-way straight without post
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected') && !q.block_state('cc:wall_post')",
+    components: {
+      "minecraft:collision_box": { "origin": [-3, 0, -8], "size": [6, 24, 16] },
+      "minecraft:selection_box": { "origin": [-3, 0, -8], "size": [6, 14, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_straight" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:wall_post')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 90, 0] },
+      "minecraft:collision_box": { "origin": [-3, 0, -8], "size": [6, 24, 16] },
+      "minecraft:selection_box": { "origin": [-3, 0, -8], "size": [6, 14, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_straight" }
+    }
+  },
+  // 2-way straight with post
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected') && q.block_state('cc:wall_post')",
+    components: {
+      "minecraft:collision_box": { "origin": [-4, 0, -8], "size": [8, 24, 16] },
+      "minecraft:selection_box": { "origin": [-4, 0, -8], "size": [8, 16, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_straight_post" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected') && q.block_state('cc:wall_post')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 90, 0] },
+      "minecraft:collision_box": { "origin": [-4, 0, -8], "size": [8, 24, 16] },
+      "minecraft:selection_box": { "origin": [-4, 0, -8], "size": [8, 16, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_straight_post" }
+    }
+  },
+  // 2-way corner
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:east_connected')",
+    components: {
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 12] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side2" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:west_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 270, 0] },
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 12] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side2" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:south_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:east_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 90, 0] },
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 12] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side2" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:west_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 180, 0] },
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 12] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 12] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_side2" }
+    }
+  },
+  // 3-way tee
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:east_connected')",
+    components: {
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 16] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_tee" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 180, 0] },
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 16] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_tee" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:south_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 270, 0] },
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 16] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_tee" }
+    }
+  },
+  {
+    condition: "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected')",
+    components: {
+      "minecraft:transformation": { "rotation": [0, 90, 0] },
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [12, 24, 16] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [12, 16, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_tee" }
+    }
+  },
+  // 4-way quad
+  {
+    condition: "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && q.block_state('cc:west_connected')",
+    components: {
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [16, 24, 16] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [16, 16, 16] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_quad" }
+    }
+  }
+];
+
+const blockJson = {
+  format_version: "1.21.70",
+  "minecraft:block": {
+    description: {
+      identifier: "cc:copycat_wall",
+      menu_category: { category: "construction" },
+      states: {
+        "cc:wall_post": [false, true],
+        "cc:north_connected": [false, true],
+        "cc:south_connected": [false, true],
+        "cc:east_connected": [false, true],
+        "cc:west_connected": [false, true]
+      }
+    },
+    components: {
+      "minecraft:collision_box": { "origin": [-4, 0, -4], "size": [8, 24, 8] },
+      "minecraft:selection_box": { "origin": [-4, 0, -4], "size": [8, 16, 8] },
+      "minecraft:geometry": { "identifier": "geometry.copycat_wall_post" },
+      "minecraft:material_instances": { "*": { "texture": "copycat_base", "render_method": "alpha_test" } },
+      "tag:walls": {},
+      "tag:stone": {},
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 5.0 },
+      "minecraft:destructible_by_explosion": { "explosion_resistance": 30.0 },
+      "minecraft:loot": "loot_tables/blocks/copycat_wall.json"
+    },
+    permutations: perms
+  }
+};
+
+const targetPath = path.resolve("Bedrock Copycats [BP]/blocks/copycat/base/copycat_wall.block.json");
+fs.writeFileSync(targetPath, JSON.stringify(blockJson, null, "\t"));
+console.log("Wrote " + targetPath);

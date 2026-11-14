@@ -1,80 +1,43 @@
-// api.js - Public API functions for external use
-import { transformStates, textureVariants } from "./config.js";
-import { canRotate, canChangePosition, isTransformable, isBlockTextured } from "./utils.js";
+// api.js - public API for other scripts/packs. Function names are kept from the previous version.
+import {
+  addExternalVariant, canChangePosition, canRotate, getGroupId, getShapeId, isBaseShape, isTransformable, listExternalVariants,
+  listMaterialItems, listShapeIds, registryMeta, resolveTexture, MATERIAL_STATE, getMaterialItem, getShape,
+} from "./core/registry.js";
+import { registerConnectionRule } from "./systems/connections.js";
 
-// ============================================
-// UTILITY FUNCTIONS FOR EXTERNAL USE
-// ============================================
-export const getBlockTransformCapabilities = (blockType) => {
-  return {
-    canRotate: canRotate(blockType),
-    canChangePosition: canChangePosition(blockType),
-    isTransformable: isTransformable(blockType)
-  };
+export { registerConnectionRule, registryMeta };
+
+export const getBlockTransformCapabilities = (blockType) => ({
+  canRotate: canRotate(blockType),
+  canChangePosition: canChangePosition(blockType),
+  isTransformable: isTransformable(blockType),
+});
+
+export const listTransformableBlocks = () => listShapeIds().filter(isTransformable);
+
+/** Register a material produced by blocks YOUR pack defines: item -> block (+ optional state) on a base shape. */
+export const addTextureVariant = (itemId, { shapeId, blockType, stateName, stateValue, sound }) => {
+  addExternalVariant(itemId, shapeId, { typeId: blockType, stateValue, stateName, groupId: null, sound: sound ? { place: { sound } } : null });
 };
 
-export const listTransformableBlocks = () => {
-  return Object.keys(transformStates);
-};
+export const getTextureVariantInfo = (itemId, shapeId = "cc:copycat_block") => resolveTexture(itemId, shapeId);
+export const listTextureVariants = () => [...listMaterialItems(), ...listExternalVariants().map((k) => k.split("|")[0])];
 
-// Helper function to add new texture variants dynamically
-export const addTextureVariant = (itemId, variantData) => {
-  textureVariants[itemId] = variantData;
-  console.log(`Added texture variant: ${itemId} -> ${variantData.blockType} (${variantData.stateValue})`);
-};
-
-// Helper function to get texture variant info for an item
-export const getTextureVariantInfo = (itemId) => {
-  return textureVariants[itemId];
-};
-
-// Helper function to list all available texture variants
-export const listTextureVariants = () => {
-  return Object.keys(textureVariants);
-};
-
-// Helper function to get all items for a specific block type
+/** Items that can texture the given copycat block type (base shape or textured variant). */
 export const getItemsForBlockType = (blockType) => {
-  const items = [];
-  for (const [itemId, variant] of Object.entries(textureVariants)) {
-    if (variant.blockType === blockType) {
-      items.push(itemId);
-    }
-  }
-  return items;
+  const shapeId = getShapeId(blockType);
+  if (!shapeId || !getShape(shapeId).texturable) return [];
+  return listMaterialItems().filter((id) => (isBaseShape(blockType) ? true : resolveTexture(id, shapeId)?.typeId === blockType));
 };
 
-// Helper function to get current texture information for a block
 export const getBlockTextureInfo = (block) => {
   const blockType = block.typeId;
-  const isTextured = isBlockTextured(block);
-  
-  let textureInfo = null;
-  if (isTextured) {
-    // Find the texture variant that matches this block
-    for (const [itemId, variant] of Object.entries(textureVariants)) {
-      if (variant.blockType === blockType) {
-        try {
-          const stateValue = block.permutation.getState(variant.stateName);
-          if (stateValue === variant.stateValue) {
-            textureInfo = {
-              itemId: itemId,
-              blockType: variant.blockType,
-              stateValue: variant.stateValue,
-              stateName: variant.stateName
-            };
-            break;
-          }
-        } catch (e) {
-          // State doesn't exist, continue
-        }
-      }
-    }
-  }
-  
+  const groupId = getGroupId(blockType);
+  if (!groupId) return { isTextured: false, blockType, textureInfo: null };
+  const stateValue = block.permutation.getState(MATERIAL_STATE);
   return {
-    isTextured: isTextured,
-    blockType: blockType,
-    textureInfo: textureInfo
+    isTextured: true,
+    blockType,
+    textureInfo: { itemId: getMaterialItem(blockType, stateValue), blockType, stateName: MATERIAL_STATE, stateValue, groupId, shapeId: getShapeId(blockType) },
   };
 };

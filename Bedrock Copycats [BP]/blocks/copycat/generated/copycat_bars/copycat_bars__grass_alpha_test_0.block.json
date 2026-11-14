@@ -1,0 +1,919 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_bars__grass_alpha_test_0",
+			"states": {
+				"cc:north_connected": [
+					false,
+					true
+				],
+				"cc:south_connected": [
+					false,
+					true
+				],
+				"cc:east_connected": [
+					false,
+					true
+				],
+				"cc:west_connected": [
+					false,
+					true
+				],
+				"cc:material": [
+					"acacia_leaves",
+					"birch_leaves",
+					"dark_oak_leaves",
+					"jungle_leaves",
+					"mangrove_leaves",
+					"oak_leaves",
+					"pale_oak_leaves",
+					"spruce_leaves"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-1,
+					0,
+					-1
+				],
+				"size": [
+					2,
+					16,
+					2
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-1,
+					0,
+					-1
+				],
+				"size": [
+					2,
+					16,
+					2
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_bars_post"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"tag:bars": {},
+			"tag:iron_bars": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_bars.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:north_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && !q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:west_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_straight"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-1,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_straight"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:east_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:east_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							9
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:east_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							9,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_bars_quad"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'acacia_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'birch_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"up": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "birch_foliage"
+						},
+						"down": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "birch_foliage"
+						},
+						"north": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"south": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"east": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"west": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'dark_oak_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'jungle_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mangrove_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mangrove_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'oak_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pale_oak_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pale_oak_leaves",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'spruce_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"up": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "evergreen_foliage"
+						},
+						"down": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "evergreen_foliage"
+						},
+						"north": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"south": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"east": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"west": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						}
+					}
+				}
+			}
+		]
+	}
+}

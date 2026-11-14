@@ -1,0 +1,280 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__grass_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"dried_kelp_block",
+					"hay_block",
+					"mycelium",
+					"target",
+					"tnt"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json",
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			]
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'dried_kelp_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "dried_kelp_block_side_a",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "dried_kelp_block_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "dried_kelp_block_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "dried_kelp_block_side_a",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "dried_kelp_block_side_b",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "dried_kelp_block_side_b",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "dried_kelp_block_side_a",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'hay_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "hayblock_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "hayblock_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "hayblock_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "hayblock_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "hayblock_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "hayblock_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "hayblock_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mycelium'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mycelium_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "mycelium_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "mycelium_bottom",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "mycelium_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "mycelium_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "mycelium_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "mycelium_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'target'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "target_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "target_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "target_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "target_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "target_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "target_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "target_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'tnt'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_tnt_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "flattened_tnt_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "flattened_tnt_bottom",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "flattened_tnt_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "flattened_tnt_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "flattened_tnt_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "flattened_tnt_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

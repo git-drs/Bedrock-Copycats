@@ -1,0 +1,256 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_board__trial_spawner_alpha_test_0",
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				},
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"states": {
+				"cc:material": [
+					"trial_spawner",
+					"_unused"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_board",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:map_color": "#ff8434",
+			"minecraft:loot": "loot_tables/blocks/copycat_board.json",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"on_liquid_touches": "popped"
+					}
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							-90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							-90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'trial_spawner'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "trial_spawner_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "trial_spawner_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "trial_spawner_bottom",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "trial_spawner_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "trial_spawner_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "trial_spawner_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "trial_spawner_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

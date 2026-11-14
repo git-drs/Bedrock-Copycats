@@ -1,44 +1,73 @@
-// main.js - Main event handler and initialization
-import { world } from "@minecraft/server";
-import { isCopycat, isTransformable, getTextureVariant } from "./utils.js";
-import { handleCopycatBlock} from "./textureHandler.js";
-import { handleWrench } from "./wrenchHandler.js";
-import "./trapdoor.js";
-import "./neighbour.js";
+// main.js - entry point. Wires the systems together; all logic lives in core/ and systems/.
+import { world, ItemStack } from "@minecraft/server";
+import { WRENCH_ID } from "./config.js";
+import { onBlockInteract } from "./core/compat.js";
+import { isCopycat, isVariant, getMaterialItem, getShapeId, MATERIAL_STATE } from "./core/registry.js";
+import { handleTexturing } from "./systems/texturing.js";
+import { handleWrench } from "./systems/wrench.js";
+import { runVersionCheck } from "./systems/versionCheck.js";
+import { initLadderSystem } from "./systems/ladder.js";
+import "./systems/trapdoor.js";
+import "./systems/fence_gate.js";
+import "./systems/door.js";
+import "./systems/layer.js";
+import "./systems/lantern.js";
+import "./systems/pressurePlate.js";
+import "./systems/button.js";
+import "./systems/connections.js";
 
-// Export all API functions for external use
 export * from "./api.js";
 
-// ============================================
-// MAIN EVENT HANDLER
-// ============================================
-world.beforeEvents.itemUseOn.subscribe(event => {
-  const { itemStack: item, block, source: player } = event;
-  
-  // Early exit checks to minimize processing
-  if (!item?.typeId || !block?.typeId || !player?.id) return;
-  if (!isCopycat(block.typeId) && !isTransformable(block.typeId)) return;
-  
-  const isWrench = item.typeId === "cc:wrench";
-  
-  // Check if this is a valid interaction
-  if (!isWrench && !getTextureVariant(item.typeId)) return;
-  
-  // Route to appropriate handler
-  if (isWrench) {
-    handleWrench(event);
-  } else {
-    handleCopycatBlock(event);
+initLadderSystem();
+
+onBlockInteract((ctx) => {
+  if (!ctx.item?.typeId || !ctx.block?.typeId || !ctx.player?.id) return;
+  if (!isCopycat(ctx.block.typeId)) return;
+  if (ctx.item.typeId === WRENCH_ID) handleWrench(ctx);
+  else handleTexturing(ctx);
+});
+
+// Refund applied material block when broken in Survival
+world.afterEvents.playerBreakBlock.subscribe((event) => {
+  const { block, brokenBlockPermutation, dimension, player } = event;
+  const typeId = brokenBlockPermutation.type.id;
+  const shape = getShapeId(typeId);
+
+  // If broken block is a stacked copycat_layer, drop the extra layers
+  if (shape === "cc:copycat_layer") {
+    const height = brokenBlockPermutation.getState("cc:height") || 1;
+    if (height > 1) {
+      try {
+        if (!player?.getGameMode || player.getGameMode() !== "creative") {
+          dimension.spawnItem(new ItemStack("cc:copycat_layer", height - 1), {
+            x: block.location.x + 0.5,
+            y: block.location.y + 0.5,
+            z: block.location.z + 0.5,
+          });
+        }
+      } catch {}
+    }
+  }
+
+  if (isVariant(typeId)) {
+    try {
+      if (player?.getGameMode && player.getGameMode() === "creative") return;
+    } catch (_) {}
+
+    const stateValue = brokenBlockPermutation.getState(MATERIAL_STATE);
+    const materialItem = getMaterialItem(typeId, stateValue);
+    if (materialItem) {
+      try {
+        dimension.spawnItem(new ItemStack(materialItem, 1), {
+          x: block.location.x + 0.5,
+          y: block.location.y + 0.5,
+          z: block.location.z + 0.5,
+        });
+      } catch (e) {
+        console.warn(`[copycat] failed to refund broken block material: ${e}`);
+      }
+    }
   }
 });
 
-// ============================================
-// CLEANUP
-// ============================================
-world.afterEvents.playerBreakBlock.subscribe(event => {
-  if (isCopycat(event.block.typeId) || isTransformable(event.block.typeId)) {
-    // No cache to clean up in this version
-  }
-});
-
-console.warn("Bedrock Copycat has been reload........");
+runVersionCheck();

@@ -1,0 +1,194 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__copper_grate_alpha_test_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"copper_grate",
+					"exposed_copper_grate",
+					"oxidized_copper_grate",
+					"waxed_copper_grate",
+					"waxed_exposed_copper_grate",
+					"waxed_oxidized_copper_grate",
+					"waxed_weathered_copper_grate",
+					"weathered_copper_grate"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json",
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			]
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'exposed_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "exposed_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'oxidized_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oxidized_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_exposed_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "exposed_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_oxidized_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oxidized_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_weathered_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "weathered_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'weathered_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "weathered_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

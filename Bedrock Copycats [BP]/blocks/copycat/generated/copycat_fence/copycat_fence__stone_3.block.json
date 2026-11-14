@@ -1,0 +1,839 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_fence__stone_3",
+			"states": {
+				"cc:north_connected": [
+					false,
+					true
+				],
+				"cc:south_connected": [
+					false,
+					true
+				],
+				"cc:east_connected": [
+					false,
+					true
+				],
+				"cc:west_connected": [
+					false,
+					true
+				],
+				"cc:material": [
+					"end_bricks",
+					"end_stone",
+					"fire_coral_block",
+					"furnace",
+					"gilded_blackstone",
+					"gold_ore",
+					"granite",
+					"gray_concrete",
+					"gray_glazed_terracotta",
+					"gray_shulker_box",
+					"green_concrete",
+					"green_glazed_terracotta",
+					"green_shulker_box",
+					"horn_coral_block",
+					"infested_chiseled_stone_bricks",
+					"infested_cobblestone"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					24,
+					4
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_post"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"tag:fences": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_fence.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:north_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && !q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:west_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_fence"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_fence"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:north_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:west_connected') && q.block_state('cc:south_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:east_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:west_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:west_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:north_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && q.block_state('cc:north_connected') && q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_quad"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'end_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "end_bricks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'end_stone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "end_stone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'fire_coral_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fire_coral_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'furnace'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "furnace_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "furnace_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "furnace_front_off",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gilded_blackstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gilded_blackstone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gold_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gold_ore",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'granite'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "granite",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_concrete",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_glazed_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_shulker_box",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_concrete",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_glazed_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_shulker_box",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'horn_coral_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "horn_coral_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'infested_chiseled_stone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "infested_chiseled_stone_bricks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'infested_cobblestone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "infested_cobblestone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

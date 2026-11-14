@@ -1,0 +1,207 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_lantern__froglight_0",
+			"states": {
+				"cc:hanging": [
+					false,
+					true
+				],
+				"cc:material": [
+					"ochre_froglight",
+					"pearlescent_froglight",
+					"verdant_froglight"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:lantern"
+			],
+			"minecraft:light_emission": 15,
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_lantern_standing"
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					9,
+					6
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					9,
+					6
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 15
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_lantern.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:hanging')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_lantern_hanging"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							9,
+							6
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-3,
+							1,
+							-3
+						],
+						"size": [
+							6,
+							15,
+							6
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'ochre_froglight'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "ochre_froglight_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "ochre_froglight_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pearlescent_froglight'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "pearlescent_froglight_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "pearlescent_froglight_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'verdant_froglight'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "verdant_froglight_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "verdant_froglight_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			}
+		]
+	}
+}

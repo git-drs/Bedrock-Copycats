@@ -1,0 +1,342 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_door__gravel_0",
+			"states": {
+				"cc:half": [
+					"lower",
+					"upper"
+				],
+				"cc:hinge": [
+					"left",
+					"right"
+				],
+				"cc:open": [
+					false,
+					true
+				],
+				"cc:material": [
+					"clay",
+					"coarse_dirt",
+					"dirt",
+					"gravel",
+					"podzol"
+				]
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:door"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_door_lower"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"tag:doors": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 15
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_door.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:half') == 'upper' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_upper"
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'lower' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_lower_open_left",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'upper' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_upper_open_left",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'lower' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_lower_open_right",
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'upper' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_upper_open_right",
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'clay'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "clay",
+							"render_method": "alpha_test",
+							"isotropic": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'coarse_dirt'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coarse_dirt",
+							"render_method": "alpha_test",
+							"isotropic": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'dirt'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flattened_dirt",
+							"render_method": "alpha_test",
+							"isotropic": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gravel'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gravel",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'podzol'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "dirt_podzol_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "dirt_podzol_top",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "dirt_podzol_bottom",
+							"render_method": "alpha_test",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "dirt_podzol_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "dirt_podzol_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "dirt_podzol_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "dirt_podzol_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

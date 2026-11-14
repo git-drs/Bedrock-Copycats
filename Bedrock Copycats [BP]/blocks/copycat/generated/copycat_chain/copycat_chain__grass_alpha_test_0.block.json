@@ -1,0 +1,511 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_chain__grass_alpha_test_0",
+			"states": {
+				"cc:axis": [
+					"y",
+					"x",
+					"z"
+				],
+				"cc:material": [
+					"acacia_leaves",
+					"birch_leaves",
+					"dark_oak_leaves",
+					"jungle_leaves",
+					"mangrove_leaves",
+					"oak_leaves",
+					"pale_oak_leaves",
+					"spruce_leaves"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7.5,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 1.15
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.25
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_chain",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:map_color": "#ff7336",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_chain.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:axis') == 'y'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-2
+						],
+						"size": [
+							4,
+							16,
+							4
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-2
+						],
+						"size": [
+							4,
+							16,
+							4
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:axis') == 'x'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							6,
+							-2
+						],
+						"size": [
+							16,
+							4,
+							4
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							6,
+							-2
+						],
+						"size": [
+							16,
+							4,
+							4
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:axis') == 'z'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							6,
+							-8
+						],
+						"size": [
+							4,
+							4,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							6,
+							-8
+						],
+						"size": [
+							4,
+							4,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'acacia_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "acacia_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'birch_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"up": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "birch_foliage"
+						},
+						"down": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "birch_foliage"
+						},
+						"north": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"south": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"east": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						},
+						"west": {
+							"texture": "birch_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "birch_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'dark_oak_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "big_oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'jungle_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "jungle_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mangrove_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mangrove_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'oak_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"up": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"down": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "default_foliage"
+						},
+						"north": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"south": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"east": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						},
+						"west": {
+							"texture": "oak_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "default_foliage"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pale_oak_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pale_oak_leaves",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'spruce_leaves'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"up": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "evergreen_foliage"
+						},
+						"down": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"isotropic": true,
+							"tint_method": "evergreen_foliage"
+						},
+						"north": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"south": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"east": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						},
+						"west": {
+							"texture": "spruce_leaves",
+							"render_method": "alpha_test",
+							"tint_method": "evergreen_foliage"
+						}
+					}
+				}
+			}
+		]
+	}
+}

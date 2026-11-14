@@ -1,0 +1,35 @@
+{
+	"_readme": "The ONLY hand-maintained data in the generator. Everything else is read from vanilla data. Each entry is validated against the vanilla files on every run (unknown textures/sounds abort the run).",
+
+	"forceExclude": [
+		"barrier", "jigsaw", "structure_block",
+		"command_block", "chain_command_block", "repeating_command_block"
+	],
+
+	"supplementBlocks": {
+		"_why": "Blocks the engine hard-codes, so vanilla blocks.json has no entry for them. (grass_block is deliberately absent: its side is a tinted overlay layered over dirt and cannot be shown with one texture.)",
+		"sea_lantern": { "sound": "glass", "textures": "sea_lantern" }
+	},
+
+	"tint": {
+		"_why": "Biome tinting is applied by the engine, not described in any data file. Values: none, default_foliage, birch_foliage, evergreen_foliage, dry_foliage, grass, water.",
+		"oak_leaves": "default_foliage",
+		"jungle_leaves": "default_foliage",
+		"acacia_leaves": "default_foliage",
+		"dark_oak_leaves": "default_foliage",
+		"mangrove_leaves": "default_foliage",
+		"birch_leaves": "birch_foliage",
+		"spruce_leaves": "evergreen_foliage"
+	},
+
+	"render": {
+		"_why": "Force a render class for a block name (opaque | alpha_test | blend) instead of reading texture alpha."
+	},
+
+	"shapes": {
+		"_why": "Per-shape overrides of what the wrench may do. Defaults come from the base block's own states/traits.",
+		"cc:copycat_board": { "transform": { "rotate": false, "position": false } },
+		"cc:copycat_button": { "transform": { "rotate": false, "position": false } },
+		"cc:copycat_chain": { "transform": { "rotate": true, "position": false } }
+	}
+}

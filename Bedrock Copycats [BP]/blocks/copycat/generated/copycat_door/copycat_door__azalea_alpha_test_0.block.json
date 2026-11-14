@@ -1,0 +1,325 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_door__azalea_alpha_test_0",
+			"states": {
+				"cc:half": [
+					"lower",
+					"upper"
+				],
+				"cc:hinge": [
+					"left",
+					"right"
+				],
+				"cc:open": [
+					false,
+					true
+				],
+				"cc:material": [
+					"azalea",
+					"flowering_azalea"
+				]
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:door"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_door_lower"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"tag:doors": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 15
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_door.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:half') == 'upper' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_upper"
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'lower' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_lower_open_left",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'upper' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'left'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_upper_open_left",
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'lower' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_lower_open_right",
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:half') == 'upper' && q.block_state('cc:open') && q.block_state('cc:hinge') == 'right'",
+				"components": {
+					"minecraft:geometry": "geometry.copycat_door_upper_open_right",
+					"minecraft:collision_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							5,
+							0,
+							-8
+						],
+						"size": [
+							3,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'azalea'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "azalea_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "azalea_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "potted_azalea_bush_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "azalea_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "potted_azalea_bush_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "azalea_plant",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "potted_azalea_bush_plant",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'flowering_azalea'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "flowering_azalea_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "flowering_azalea_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "potted_flowering_azalea_bush_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "flowering_azalea_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "potted_flowering_azalea_bush_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "azalea_plant",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "potted_flowering_azalea_bush_plant",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

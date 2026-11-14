@@ -1,0 +1,438 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_layer__copper_grate_alpha_test_0",
+			"states": {
+				"cc:height": [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8
+				],
+				"cc:material": [
+					"copper_grate",
+					"exposed_copper_grate",
+					"oxidized_copper_grate",
+					"waxed_copper_grate",
+					"waxed_exposed_copper_grate",
+					"waxed_oxidized_copper_grate",
+					"waxed_weathered_copper_grate",
+					"weathered_copper_grate"
+				]
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:layer"
+			],
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_layer_1"
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2,
+					16
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7.5,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 1.15
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.25
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:map_color": "#ff7336",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_layer.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:height') == 2",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_2"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							4,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							4,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 3",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_3"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							6,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							6,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 4",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_4"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 5",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_5"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							10,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							10,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 6",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_6"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							12,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							12,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 7",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_7"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							14,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							14,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:height') == 8",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_layer_8"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'exposed_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "exposed_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'oxidized_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oxidized_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_exposed_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "exposed_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_oxidized_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oxidized_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'waxed_weathered_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "weathered_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'weathered_copper_grate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "weathered_copper_grate",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

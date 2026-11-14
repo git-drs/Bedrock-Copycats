@@ -1,0 +1,490 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_trapdoor__stone_5",
+			"states": {
+				"cc:open": [
+					false,
+					true
+				],
+				"cc:material": [
+					"magenta_glazed_terracotta",
+					"magenta_shulker_box",
+					"magma",
+					"mossy_cobblestone",
+					"mossy_stone_bricks",
+					"obsidian",
+					"orange_concrete",
+					"orange_glazed_terracotta",
+					"orange_shulker_box",
+					"pink_concrete",
+					"pink_glazed_terracotta",
+					"pink_shulker_box",
+					"piston",
+					"polished_andesite",
+					"polished_blackstone",
+					"polished_blackstone_bricks"
+				]
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:vertical_half"
+					]
+				},
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:toggleable"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2.92,
+					16
+				]
+			},
+			"tag:one_way_collidable": {},
+			"tag:trapdoors": {},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					2.92,
+					16
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_trapdoor"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided"
+				}
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_trapdoor.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'north' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							180
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'south' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'east' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'west' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							-90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'north' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'south' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							-90,
+							0,
+							180
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'east' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							-90,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && q.block_state('minecraft:cardinal_direction') == 'west' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							90,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'north' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'south' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'east' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							-90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'west' && !q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'north' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							180
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'south' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							-90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'east' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && q.block_state('minecraft:cardinal_direction') == 'west' && q.block_state('cc:open')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							-90,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magenta_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magenta_glazed_terracotta",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magenta_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magenta_shulker_box",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magma'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magma",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						}
+					},
+					"minecraft:light_emission": 3
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mossy_cobblestone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cobblestone_mossy",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mossy_stone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mossy_stone_bricks",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'obsidian'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "obsidian",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "orange_concrete",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "orange_glazed_terracotta",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "orange_shulker_box",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pink_concrete",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pink_glazed_terracotta",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pink_shulker_box",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'piston'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "piston_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "piston_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "piston_bottom",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "piston_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "piston_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "piston_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "piston_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'polished_andesite'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "polished_andesite",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'polished_blackstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "polished_blackstone",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'polished_blackstone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "polished_blackstone_bricks",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			}
+		]
+	}
+}

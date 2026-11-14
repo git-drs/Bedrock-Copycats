@@ -1,0 +1,147 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__glass_alpha_test_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"beacon",
+					"glass"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json",
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			]
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'beacon'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "beacon_shell",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "beacon_core",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "beacon_base",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "beacon_shell",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "beacon_shell",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "beacon_shell",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "beacon_shell",
+							"render_method": "alpha_test"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "glass",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

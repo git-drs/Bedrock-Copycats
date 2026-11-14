@@ -1,0 +1,350 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_slab__stone_3",
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:vertical_half"
+					]
+				}
+			},
+			"states": {
+				"cc:material": [
+					"end_bricks",
+					"end_stone",
+					"fire_coral_block",
+					"furnace",
+					"gilded_blackstone",
+					"gold_ore",
+					"granite",
+					"gray_concrete",
+					"gray_glazed_terracotta",
+					"gray_shulker_box",
+					"green_concrete",
+					"green_glazed_terracotta",
+					"green_shulker_box",
+					"horn_coral_block",
+					"infested_chiseled_stone_bricks",
+					"infested_cobblestone"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					8,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					8,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7.5,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 1.15
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.25
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_slab",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:map_color": "#ff7336",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_slab.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'top'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							180
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'end_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "end_bricks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'end_stone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "end_stone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'fire_coral_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fire_coral_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'furnace'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "furnace_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "furnace_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "furnace_front_off",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "furnace_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gilded_blackstone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gilded_blackstone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gold_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gold_ore",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'granite'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "granite",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_concrete",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_glazed_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_shulker_box",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_concrete'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_concrete",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_glazed_terracotta'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_glazed_terracotta",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_shulker_box'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_shulker_box",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'horn_coral_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "horn_coral_block",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'infested_chiseled_stone_bricks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "infested_chiseled_stone_bricks",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'infested_cobblestone'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "infested_cobblestone",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

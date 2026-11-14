@@ -1,0 +1,504 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_block__wood_0",
+			"states": {
+				"cc:material": [
+					"acacia_log",
+					"acacia_planks",
+					"acacia_wood",
+					"barrel",
+					"birch_log",
+					"birch_planks",
+					"birch_wood",
+					"bookshelf",
+					"brown_mushroom_block",
+					"cartography_table",
+					"carved_pumpkin",
+					"crafting_table",
+					"dark_oak_log",
+					"dark_oak_planks",
+					"dark_oak_wood",
+					"fletching_table"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided_to_opaque"
+				}
+			},
+			"minecraft:map_color": "#ff7328",
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_block.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:material') == 'acacia_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "acacia_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "acacia_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "acacia_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "acacia_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "acacia_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "acacia_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "acacia_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'acacia_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "acacia_planks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'acacia_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "acacia_wood",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'barrel'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "barrel_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "barrel_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "barrel_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "barrel_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "barrel_bottom",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "barrel_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "barrel_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'birch_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "birch_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "birch_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "birch_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "birch_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "birch_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "birch_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "birch_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'birch_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "birch_planks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'birch_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "birch_wood",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'bookshelf'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bookshelf",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "bookshelf_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "bookshelf_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "bookshelf",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "bookshelf",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "bookshelf",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "bookshelf",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'brown_mushroom_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mushroom_brown_north",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "mushroom_brown_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "mushroom_brown_bottom",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "mushroom_brown_north",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "mushroom_brown_south",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "mushroom_brown_east",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "mushroom_brown_west",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cartography_table'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cartography_table_side3",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "cartography_table_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "cartography_table_bottom",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "cartography_table_side3",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "cartography_table_side1",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "cartography_table_side3",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "cartography_table_side2",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'carved_pumpkin'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "pumpkin_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "pumpkin_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "pumpkin_face",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'crafting_table'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "crafting_table_front",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "crafting_table_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "crafting_table_bottom",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "crafting_table_front",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "crafting_table_front",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "crafting_table_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "crafting_table_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'dark_oak_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "dark_oak_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "dark_oak_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "dark_oak_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "dark_oak_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "dark_oak_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "dark_oak_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "dark_oak_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'dark_oak_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "dark_oak_planks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'dark_oak_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "dark_oak_wood",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'fletching_table'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "fletching_table_side1",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "fletching_table_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "birch_planks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "fletching_table_side1",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "fletching_table_side1",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "fletching_table_side2",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "fletching_table_side2",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			}
+		]
+	}
+}

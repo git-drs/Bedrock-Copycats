@@ -1,0 +1,268 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pannel__froglight_0",
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"states": {
+				"cc:material": [
+					"ochre_froglight",
+					"pearlescent_froglight",
+					"verdant_froglight"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					3,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					3,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_pannel",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided"
+				}
+			},
+			"minecraft:map_color": "#ff6c2b",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pannel.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							-90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							-90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'ochre_froglight'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "ochre_froglight_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "ochre_froglight_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "ochre_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pearlescent_froglight'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "pearlescent_froglight_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "pearlescent_froglight_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "pearlescent_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'verdant_froglight'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "verdant_froglight_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "verdant_froglight_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "verdant_froglight_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			}
+		]
+	}
+}

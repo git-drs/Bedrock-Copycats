@@ -1,0 +1,109 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_block__ancient_debris_0",
+			"states": {
+				"cc:material": [
+					"ancient_debris",
+					"_unused"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided_to_opaque"
+				}
+			},
+			"minecraft:map_color": "#ff7328",
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_block.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:material') == 'ancient_debris'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "ancient_debris_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "ancient_debris_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "ancient_debris_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "ancient_debris_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "ancient_debris_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "ancient_debris_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "ancient_debris_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			}
+		]
+	}
+}

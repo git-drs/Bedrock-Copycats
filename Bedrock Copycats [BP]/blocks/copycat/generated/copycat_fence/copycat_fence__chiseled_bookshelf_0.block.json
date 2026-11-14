@@ -1,0 +1,660 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_fence__chiseled_bookshelf_0",
+			"states": {
+				"cc:north_connected": [
+					false,
+					true
+				],
+				"cc:south_connected": [
+					false,
+					true
+				],
+				"cc:east_connected": [
+					false,
+					true
+				],
+				"cc:west_connected": [
+					false,
+					true
+				],
+				"cc:material": [
+					"chiseled_bookshelf",
+					"_unused"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					24,
+					4
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-2,
+					0,
+					-2
+				],
+				"size": [
+					4,
+					16,
+					4
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_post"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"tag:fences": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_fence.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:north_connected') && !q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && !q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:west_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_fence"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							24,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-2,
+							0,
+							-8
+						],
+						"size": [
+							4,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_fence"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:north_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:west_connected') && q.block_state('cc:south_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:east_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_tee"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:north_connected') && !q.block_state('cc:west_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:north_connected') && q.block_state('cc:west_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:west_connected') && q.block_state('cc:south_connected') && !q.block_state('cc:east_connected') && !q.block_state('cc:north_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:south_connected') && q.block_state('cc:east_connected') && !q.block_state('cc:north_connected') && !q.block_state('cc:west_connected')",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							24,
+							10
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							10,
+							16,
+							10
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_side2"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:east_connected') && q.block_state('cc:west_connected') && q.block_state('cc:north_connected') && q.block_state('cc:south_connected')",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							24,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_quad"
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'chiseled_bookshelf'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chiseled_bookshelf_front",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "chiseled_bookshelf_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "chiseled_bookshelf_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "chiseled_bookshelf_front",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "chiseled_bookshelf_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "chiseled_bookshelf_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "chiseled_bookshelf_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}

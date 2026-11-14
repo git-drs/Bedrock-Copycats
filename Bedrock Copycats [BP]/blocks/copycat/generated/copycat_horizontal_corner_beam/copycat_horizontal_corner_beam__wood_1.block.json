@@ -1,0 +1,601 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_horizontal_corner_beam__wood_1",
+			"states": {
+				"cc:position": [
+					"lower",
+					"upper"
+				],
+				"cc:material": [
+					"jukebox",
+					"jungle_log",
+					"jungle_planks",
+					"jungle_wood",
+					"lit_pumpkin",
+					"loom",
+					"mangrove_log",
+					"mangrove_planks",
+					"mangrove_wood",
+					"melon_block",
+					"mushroom_stem",
+					"noteblock",
+					"oak_log",
+					"oak_planks",
+					"oak_wood",
+					"pale_oak_log"
+				]
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					0
+				],
+				"size": [
+					16,
+					8,
+					8
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					0
+				],
+				"size": [
+					16,
+					8,
+					8
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_beam_horizontal_corner",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided"
+				}
+			},
+			"minecraft:map_color": "#ff5f19",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_horizontal_corner_beam.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:position') == 'upper'",
+				"components": {
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							8,
+							0
+						],
+						"size": [
+							16,
+							8,
+							8
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							8,
+							0
+						],
+						"size": [
+							16,
+							8,
+							8
+						]
+					},
+					"minecraft:geometry": "geometry.copycat_beam_horizontal_upper_corner"
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'jukebox'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "jukebox_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "jukebox_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "jukebox_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "jukebox_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "jukebox_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "jukebox_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "jukebox_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'jungle_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "jungle_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "jungle_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "jungle_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "jungle_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "jungle_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "jungle_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "jungle_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'jungle_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "jungle_planks",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'jungle_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "jungle_wood",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'lit_pumpkin'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "pumpkin_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "pumpkin_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "pumpkin_face",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "pumpkin_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					},
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'loom'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "loom_front",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "loom_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "loom_bottom",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "loom_front",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "loom_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "loom_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "loom_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mangrove_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mangrove_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "mangrove_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "mangrove_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "mangrove_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "mangrove_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "mangrove_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "mangrove_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mangrove_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mangrove_planks",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mangrove_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mangrove_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'melon_block'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "melon_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "melon_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "melon_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "melon_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "melon_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "melon_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "melon_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'mushroom_stem'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "mushroom_stem_north",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "mushroom_stem_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "mushroom_stem_bottom",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "mushroom_stem_north",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "mushroom_stem_south",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "mushroom_stem_east",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "mushroom_stem_west",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'noteblock'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "noteblock",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'oak_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "oak_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "oak_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'oak_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oak_planks",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'oak_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "oak_wood",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pale_oak_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pale_oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "pale_oak_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "pale_oak_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "pale_oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "pale_oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "pale_oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "pale_oak_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			}
+		]
+	}
+}

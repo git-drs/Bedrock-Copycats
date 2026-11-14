@@ -1,0 +1,135 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pressure_plate__creaking_heart_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"creaking_heart",
+					"_unused"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					1,
+					14
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_pressure_plate_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pressure_plate.json",
+			"minecraft:custom_components": [
+				"cc:pressure_plate"
+			]
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_pressure_plate_pressed"
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-7,
+							0,
+							-7
+						],
+						"size": [
+							14,
+							0.5,
+							14
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'creaking_heart'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "creaking_heart_side",
+							"render_method": "alpha_test"
+						},
+						"up": {
+							"texture": "creaking_heart_top",
+							"render_method": "alpha_test"
+						},
+						"down": {
+							"texture": "creaking_heart_top",
+							"render_method": "alpha_test"
+						},
+						"north": {
+							"texture": "creaking_heart_side",
+							"render_method": "alpha_test"
+						},
+						"south": {
+							"texture": "creaking_heart_side",
+							"render_method": "alpha_test"
+						},
+						"east": {
+							"texture": "creaking_heart_side",
+							"render_method": "alpha_test"
+						},
+						"west": {
+							"texture": "creaking_heart_side",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			}
+		]
+	}
+}
