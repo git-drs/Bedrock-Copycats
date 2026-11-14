@@ -15,9 +15,7 @@
 			}
 		},
 		"components": {
-			"minecraft:custom_components": [
-				"cc:pressure_plate"
-			],
+			"cc:pressure_plate": {},
 			"minecraft:collision_box": {
 				"origin": [
 					-7,

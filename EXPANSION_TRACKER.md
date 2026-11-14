@@ -97,4 +97,6 @@ For each block, the full lifecycle is:
 - **Step 8**: All commits pushed to GitHub repository `git-drs/Bedrock-Copycats` on branch `feat/all-copycat-blocks`.
 - **Step 9**: In-game validation fixes: adjusted `copycat_fence_gate` bounding boxes for `cc:in_wall` state to prevent negative origin coordinates, and bumped format version to `1.21.120` for `copycat_button` and `copycat_pressure_plate` to enable `minecraft:redstone_producer`. (Commit: `543edaa`)
 - **Step 10**: Official Java Create Model Conversion: Downloaded source models from official `copycats-plus/copycats` and `Creators-of-Create/Create` repositories. Converted all 12 block models to Bedrock format following Blockbench's conversion engine with exact sub-quadrant slicing, directional face UV mappings, and multi-permutation states. Regenerated all 2,088 block definitions and verified 0 errors.
+- **Step 11**: Content Log Analysis & Inline Custom Components Fix: Inspected `ContentLog2026-11-14_19-16-21_1.txt` identifying `minecraft:custom_components component is not valid from 1.21.90 onward` on `copycat_button` and `copycat_pressure_plate`. Migrated both blocks to modern Bedrock 1.21.90+ inline custom components syntax (`cc:button: {}` and `cc:pressure_plate: {}`), updated `datagen/lib/shapes.mjs` component extraction, regenerated all 174 variant files, and deployed to development packs.
+
 

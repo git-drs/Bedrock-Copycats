@@ -49,7 +49,10 @@ export async function loadShapes({ cfg, bpDir, overrides, log }) {
       transform: { rotate: ov.rotate ?? rotate, position: ov.position ?? position },
       connections,
       lootPath: comps["minecraft:loot"] ?? `${cfg.blocks.lootDir}/${name}.json`,
-      customComponents: comps["minecraft:custom_components"] ?? [],
+      customComponents: [
+        ...(comps["minecraft:custom_components"] ?? []),
+        ...Object.keys(comps).filter((k) => k.includes(":") && !k.startsWith("minecraft:"))
+      ],
     });
   }
   shapes.sort((a, b) => a.id.localeCompare(b.id));
