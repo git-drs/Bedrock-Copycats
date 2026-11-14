@@ -1,0 +1,41 @@
+{
+	"namespace": "cc",
+	"paths": {
+		"bp": "Bedrock Copycats [BP]",
+		"rp": "Bedrock Copycats [RP]"
+	},
+	"deploy": {
+		"enabled": true,
+		"targetDir": "auto"
+	},
+	"source": {
+		"samples": { "repo": "Mojang/bedrock-samples", "ref": "main" },
+		"minecraftData": { "repo": "PrismarineJS/minecraft-data", "ref": "master" }
+	},
+	"blocks": {
+		"baseDir": "blocks/copycat/base",
+		"generatedDir": "blocks/copycat/generated",
+		"lootDir": "loot_tables/blocks",
+		"separator": "__",
+		"baseTexture": "copycat_base",
+		"baseSound": "copper",
+		"stateName": "cc:material",
+		"groupSize": 16
+	},
+	"geometry": {
+		"dir": "models/blocks",
+		"filePrefix": "copycat_",
+		"tagFaces": true
+	},
+	"scripts": {
+		"registryFile": "scripts/generated/registry.js"
+	},
+	"materials": {
+		"include": [],
+		"exclude": []
+	},
+	"shapes": {
+		"exclude": []
+	},
+	"concurrency": 8
+}

@@ -1,0 +1,419 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_beam__deepslate_0",
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				},
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			},
+			"states": {
+				"cc:material": [
+					"cobbled_deepslate",
+					"deepslate",
+					"deepslate_coal_ore",
+					"deepslate_copper_ore",
+					"deepslate_diamond_ore",
+					"deepslate_emerald_ore",
+					"deepslate_gold_ore",
+					"deepslate_iron_ore",
+					"deepslate_lapis_ore",
+					"deepslate_redstone_ore",
+					"infested_deepslate",
+					"polished_deepslate",
+					"reinforced_deepslate"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					16,
+					8
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-4,
+					0,
+					-4
+				],
+				"size": [
+					8,
+					16,
+					8
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_beam",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided"
+				}
+			},
+			"minecraft:map_color": "#ff7234",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_beam.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cobbled_deepslate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cobbled_deepslate",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "deepslate_top",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "deepslate_top",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_coal_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_coal_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_copper_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_copper_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_diamond_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_diamond_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_emerald_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_emerald_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_gold_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_gold_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_iron_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_iron_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_lapis_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_lapis_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'deepslate_redstone_ore'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate_redstone_ore",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'infested_deepslate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "deepslate_top",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						},
+						"down": {
+							"texture": "deepslate_top",
+							"render_method": "alpha_test_single_sided",
+							"isotropic": true
+						},
+						"north": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "deepslate",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'polished_deepslate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "polished_deepslate",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'reinforced_deepslate'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "reinforced_deepslate_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "reinforced_deepslate_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "reinforced_deepslate_bottom",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "reinforced_deepslate_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "reinforced_deepslate_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "reinforced_deepslate_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "reinforced_deepslate_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			}
+		]
+	}
+}

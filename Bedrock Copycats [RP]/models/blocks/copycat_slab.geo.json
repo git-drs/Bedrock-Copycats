@@ -21,27 +21,33 @@
 							"uv": {
 								"north": {
 									"uv": [0, 8],
-									"uv_size": [16, 8]
+									"uv_size": [16, 8],
+									"material_instance": "north"
 								},
 								"east": {
 									"uv": [0, 8],
-									"uv_size": [16, 8]
+									"uv_size": [16, 8],
+									"material_instance": "east"
 								},
 								"south": {
 									"uv": [0, 8],
-									"uv_size": [16, 8]
+									"uv_size": [16, 8],
+									"material_instance": "south"
 								},
 								"west": {
 									"uv": [0, 8],
-									"uv_size": [16, 8]
+									"uv_size": [16, 8],
+									"material_instance": "west"
 								},
 								"up": {
 									"uv": [16, 16],
-									"uv_size": [-16, -16]
+									"uv_size": [-16, -16],
+									"material_instance": "up"
 								},
 								"down": {
 									"uv": [16, 16],
-									"uv_size": [-16, -16]
+									"uv_size": [-16, -16],
+									"material_instance": "down"
 								}
 							}
 						}
@@ -67,12 +73,36 @@
 							"origin": [-8, 8, -8],
 							"size": [16, 8, 16],
 							"uv": {
-								"north": {"uv": [0, 0], "uv_size": [16, 8]},
-								"east": {"uv": [0, 0], "uv_size": [16, 8]},
-								"south": {"uv": [0, 0], "uv_size": [16, 8]},
-								"west": {"uv": [0, 0], "uv_size": [16, 8]},
-								"up": {"uv": [16, 16], "uv_size": [-16, -16]},
-								"down": {"uv": [16, 16], "uv_size": [-16, -16]}
+								"north": {
+									"uv": [0, 0],
+									"uv_size": [16, 8],
+									"material_instance": "north"
+								},
+								"east": {
+									"uv": [0, 0],
+									"uv_size": [16, 8],
+									"material_instance": "east"
+								},
+								"south": {
+									"uv": [0, 0],
+									"uv_size": [16, 8],
+									"material_instance": "south"
+								},
+								"west": {
+									"uv": [0, 0],
+									"uv_size": [16, 8],
+									"material_instance": "west"
+								},
+								"up": {
+									"uv": [16, 16],
+									"uv_size": [-16, -16],
+									"material_instance": "up"
+								},
+								"down": {
+									"uv": [16, 16],
+									"uv_size": [-16, -16],
+									"material_instance": "down"
+								}
 							}
 						}
 					]

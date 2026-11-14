@@ -2,3 +2,4 @@
 *.mcaddon
 *.zip
 build/
+datagen/cache/

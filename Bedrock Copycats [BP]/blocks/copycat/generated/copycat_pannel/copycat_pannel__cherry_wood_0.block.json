@@ -1,0 +1,265 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_pannel__cherry_wood_0",
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"states": {
+				"cc:material": [
+					"cherry_log",
+					"cherry_planks",
+					"cherry_wood",
+					"stripped_cherry_log",
+					"stripped_cherry_wood"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					3,
+					16
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					3,
+					16
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_pannel",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided"
+				}
+			},
+			"minecraft:map_color": "#ff6c2b",
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_pannel.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							-90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							-90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "cherry_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "cherry_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_planks",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_cherry_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"up": {
+							"texture": "stripped_cherry_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"down": {
+							"texture": "stripped_cherry_log_top",
+							"render_method": "alpha_test_single_sided"
+						},
+						"north": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"south": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"east": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						},
+						"west": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_cherry_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided"
+						}
+					}
+				}
+			}
+		]
+	}
+}

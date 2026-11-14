@@ -1,0 +1,13 @@
+{
+	"name": "bedrock-copycats",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"datagen": "node datagen/run.mjs",
+		"datagen:check": "node datagen/run.mjs --check",
+		"datagen:watch": "node datagen/run.mjs --watch",
+		"datagen:offline": "node datagen/run.mjs --offline",
+		"deploy": "node datagen/deploy.mjs"
+	},
+	"engines": { "node": ">=18" }
+}

@@ -71,7 +71,8 @@
                         "can_contain_liquid": true
                     }
                 ]
-            }
+            },
+            "minecraft:loot": "loot_tables/blocks/copycat_trapdoor.json"
         },
         "permutations": [
             {

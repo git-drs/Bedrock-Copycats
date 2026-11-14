@@ -1,0 +1,180 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_block__cherry_wood_0",
+			"states": {
+				"cc:material": [
+					"cherry_log",
+					"cherry_planks",
+					"cherry_wood",
+					"stripped_cherry_log",
+					"stripped_cherry_wood"
+				]
+			}
+		},
+		"components": {
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 18.75,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:wooden_tier')"
+						},
+						"destroy_speed": 2.88
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:iron_tier')"
+						},
+						"destroy_speed": 1
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.5
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.75
+					},
+					{
+						"item": {
+							"tags": "q.all_tags('minecraft:is_pickaxe', 'minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.63
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:geometry": "geometry.copycat_block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "alpha_test_single_sided_to_opaque"
+				}
+			},
+			"minecraft:map_color": "#ff7328",
+			"minecraft:light_dampening": 0,
+			"minecraft:loot": "loot_tables/blocks/copycat_block.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "cherry_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "cherry_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_planks'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_planks",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cherry_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_cherry_log'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"up": {
+							"texture": "stripped_cherry_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"down": {
+							"texture": "stripped_cherry_log_top",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"north": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"south": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"east": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						},
+						"west": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'stripped_cherry_wood'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "stripped_cherry_log_side",
+							"render_method": "alpha_test_single_sided_to_opaque"
+						}
+					}
+				}
+			}
+		]
+	}
+}
