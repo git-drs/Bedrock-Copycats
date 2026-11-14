@@ -5,8 +5,8 @@
 export const WRENCH_ID = "cc:wrench";
 export const TOGGLE_COMPONENT = "cc:toggleable"; // custom component on the trapdoor shape
 
-/** Allow applying a different material to a block that is already textured. */
-export const ALLOW_RETEXTURE = true;
+/** Allow applying a different material to a block that is already textured. Default false: copycats cannot be retextured once textured (must be reset with a wrench first). */
+export const ALLOW_RETEXTURE = false;
 
 /** Cooldowns in ticks (stops the double-fire of interact events). */
 export const COOLDOWN_TICKS = { texture: 20, wrench: 10, transform: 10 };

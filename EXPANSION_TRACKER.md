@@ -137,6 +137,15 @@ For each block, the full lifecycle is:
   4. **Button Permutation & Selection Overhaul (`copycat_button.block.json`)**: Configured canonical 6-face rotations matching Bedrock documentation: `up` (`[0, 0, 0]`), `down` (`[180, 0, 0]`), `north` (`[90, 0, 0]`), `south` (`[-90, 0, 0]`), `west` (`[0, 0, -90]`), `east` (`[0, 0, 90]`). Added exact wall/ceiling/floor `selection_box` definitions to every permutation.
   5. **Ladder Rotation & Selection Synchronization (`copycat_ladder.block.json`)**: Corrected `east` (`[0, 270, 0]`) and `west` (`[0, 90, 0]`) rotations. Added matching `selection_box` per cardinal direction: North (`[-8, 0, -8], [16, 16, 2]`), South (`[-8, 0, 6], [16, 16, 2]`), East (`[6, 0, -8], [2, 16, 16]`), West (`[-8, 0, -8], [2, 16, 16]`).
   6. **Rebuild & Deployment**: Regenerated all 174 ladder and button block variant files via `npm run datagen` and deployed directly to `development_behavior_packs` and `development_resource_packs`.
+- **Step 17**: Texturing Handler Lock & Direct Inventory Recovery (Right-Click & Shift-Click):
+  1. **Texturing Lock (`ALLOW_RETEXTURE = false`)**: Updated `config.js` and `scripts/systems/texturing.js` to strictly reject texturing if a block is already textured (`!isBaseShape || isVariant`). This ensures textured copycat blocks cannot be accidentally re-textured, and holding a block item against a textured copycat block cleanly permits normal block placement without consuming/swapping textures.
+  2. **Direct Inventory Addition (`compat.js: giveOrDrop`)**: Resolved the critical container bug where `player.getComponent("minecraft:inventory")?.container?.addItem()` returned `undefined` on success, causing items to be dropped or lost. Standardized fallback across `player.getComponent("minecraft:inventory")` and `player.getComponent("inventory")`. `addItem()` places items directly into the player's inventory first; only if the inventory is completely full does it spawn the remaining items at their feet.
+  3. **Robust Material Lookup (`registry.js: getMaterialItem`)**: Added automatic fallback to the group's material values if `stateValue` is absent, guaranteeing the material item is always retrieved.
+  4. **Direct Inventory Refund on Right-Click & Shift-Click (`wrench.js`, `main.js`)**:
+     - **Normal Right-Click**: Untextures the block and places the removed material item directly inside the player's inventory.
+     - **Shift-Click**: Dismantles/picks up the block and places both the base copycat block and the textured material block directly inside the player's inventory.
+     - Dispatched for both Wrench and Empty Hand (while preserving interaction for doors, buttons, fence gates, and trapdoors).
+  5. **Verification & Deployment**: Verified with `npm run datagen:check` (2,102 files in sync) and deployed to `development_behavior_packs` and `development_resource_packs`.
 
 
 

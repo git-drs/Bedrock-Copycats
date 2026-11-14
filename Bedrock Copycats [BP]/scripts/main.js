@@ -20,11 +20,32 @@ export * from "./api.js";
 
 initLadderSystem();
 
+const INTERACTIVE_SHAPES = new Set([
+  "cc:copycat_door",
+  "cc:copycat_trapdoor",
+  "cc:copycat_fence_gate",
+  "cc:copycat_button",
+]);
+
 onBlockInteract((ctx) => {
-  if (!ctx.item?.typeId || !ctx.block?.typeId || !ctx.player?.id) return;
+  if (!ctx.block?.typeId || !ctx.player?.id) return;
   if (!isCopycat(ctx.block.typeId)) return;
-  if (ctx.item.typeId === WRENCH_ID) handleWrench(ctx);
-  else handleTexturing(ctx);
+
+  const isWrench = ctx.item?.typeId === WRENCH_ID;
+  const isEmptyHand = !ctx.item?.typeId;
+
+  if (isWrench) {
+    handleWrench(ctx);
+  } else if (isEmptyHand) {
+    const shapeId = getShapeId(ctx.block.typeId);
+    if (ctx.player.isSneaking) {
+      handleWrench(ctx);
+    } else if (isVariant(ctx.block.typeId) && !INTERACTIVE_SHAPES.has(shapeId)) {
+      handleWrench(ctx);
+    }
+  } else {
+    handleTexturing(ctx);
+  }
 });
 
 // Refund applied material block when broken in Survival

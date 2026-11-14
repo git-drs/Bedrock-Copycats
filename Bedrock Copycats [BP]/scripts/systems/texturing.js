@@ -1,7 +1,7 @@
 // systems/texturing.js - use a vanilla block item on a copycat to give it that block's texture.
 import { system, ItemStack } from "@minecraft/server";
 import { ALLOW_RETEXTURE, COOLDOWN_TICKS, SOUNDS } from "../config.js";
-import { MATERIAL_STATE, getShapeId, isVariant, resolveTexture, getMaterialItem } from "../core/registry.js";
+import { MATERIAL_STATE, getShapeId, isBaseShape, isVariant, resolveTexture, getMaterialItem } from "../core/registry.js";
 import { permutationFrom, getState } from "../core/blockStates.js";
 import { tryCooldown, blockKey } from "../core/cooldown.js";
 import { playSound } from "../core/sound.js";
@@ -35,10 +35,14 @@ function consumeHeldItem(player, expectedTypeId) {
 
 /** @returns {boolean} true if the interaction was handled */
 export function handleTexturing({ player, block, item, cancel }) {
+  // If the block is already textured, do not texture it again
+  if (!isBaseShape(block.typeId) || isVariant(block.typeId)) {
+    if (!ALLOW_RETEXTURE) return false;
+  }
+
   const shapeId = getShapeId(block.typeId);
   const target = shapeId && resolveTexture(item.typeId, shapeId);
   if (!target) return false;
-  if (isVariant(block.typeId) && !ALLOW_RETEXTURE) return false;
 
   const { dimension, location } = block;
   const already = block.typeId === target.typeId && getState(block.permutation, MATERIAL_STATE) === target.stateValue;
@@ -49,6 +53,9 @@ export function handleTexturing({ player, block, item, cancel }) {
     try {
       const current = dimension.getBlock(location);
       if (!current || getShapeId(current.typeId) !== shapeId) return;
+
+      // Abort if block is already textured and retexturing is disabled
+      if ((!isBaseShape(current.typeId) || isVariant(current.typeId)) && !ALLOW_RETEXTURE) return;
 
       // If retexturing an existing textured block in Survival, refund the previous material item
       if (isVariant(current.typeId)) {

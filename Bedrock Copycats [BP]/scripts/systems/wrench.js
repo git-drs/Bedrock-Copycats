@@ -3,7 +3,7 @@
 //   sneak + click on any copycat                      -> pick it up (refunds material + base block)
 //   normal click on a textured copycat                -> reset to untextured base block (refunds material)
 import { system, ItemStack } from "@minecraft/server";
-import { COOLDOWN_TICKS, SOUNDS } from "../config.js";
+import { COOLDOWN_TICKS, SOUNDS, WRENCH_ID } from "../config.js";
 import { getShapeId, isBaseShape, isTransformable, isVariant, getMaterialItem, MATERIAL_STATE } from "../core/registry.js";
 import { permutationFrom, getState } from "../core/blockStates.js";
 import { tryCooldown, blockKey } from "../core/cooldown.js";
@@ -18,7 +18,11 @@ export function handleWrench(ctx) {
   const shapeId = getShapeId(block.typeId);
   if (!shapeId) return;
 
-  if (isBaseShape(block.typeId) && isTransformable(block.typeId) && !player.isSneaking) return handleTransform(ctx);
+  const isWrench = ctx.item?.typeId === WRENCH_ID;
+
+  if (isWrench && isBaseShape(block.typeId) && isTransformable(block.typeId) && !player.isSneaking) {
+    return handleTransform(ctx);
+  }
   if (!tryCooldown(`wr|${player.id}|${blockKey(block)}`, COOLDOWN_TICKS.wrench)) return;
   cancel();
 
@@ -29,24 +33,19 @@ export function handleWrench(ctx) {
       const target = dimension.getBlock(location);
       if (!target || getShapeId(target.typeId) !== shapeId) return;
 
-      const isCreative = player.getGameMode ? player.getGameMode() === "creative" : false;
-
       if (sneaking) {
-        // Refund applied material item in Survival
-        if (isVariant(target.typeId) && !isCreative) {
+        // Shift-click: put copycat block and textured block directly inside inventory
+        if (isVariant(target.typeId)) {
           const stateVal = getState(target.permutation, MATERIAL_STATE);
           const matItem = getMaterialItem(target.typeId, stateVal);
           if (matItem) giveOrDrop(player, dimension, location, new ItemStack(matItem, 1));
         }
 
-        // Give base copycat block in Survival
-        if (!isCreative) {
-          let count = 1;
-          if (shapeId === "cc:copycat_layer") {
-            count = getState(target.permutation, "cc:height") || 1;
-          }
-          giveOrDrop(player, dimension, location, new ItemStack(shapeId, count));
+        let count = 1;
+        if (shapeId === "cc:copycat_layer") {
+          count = getState(target.permutation, "cc:height") || 1;
         }
+        giveOrDrop(player, dimension, location, new ItemStack(shapeId, count));
 
         if (shapeId === "cc:copycat_door") {
           const sibling = getDoorSibling(target);
@@ -56,12 +55,10 @@ export function handleWrench(ctx) {
         playSound(dimension, location, SOUNDS.pickupPop);
         playSound(dimension, location, SOUNDS.pickupPlace);
       } else if (!isBaseShape(target.typeId)) {
-        // Refund applied material item in Survival
-        if (!isCreative) {
-          const stateVal = getState(target.permutation, MATERIAL_STATE);
-          const matItem = getMaterialItem(target.typeId, stateVal);
-          if (matItem) giveOrDrop(player, dimension, location, new ItemStack(matItem, 1));
-        }
+        // Normal right-click: directly put the removed material block inside inventory
+        const stateVal = getState(target.permutation, MATERIAL_STATE);
+        const matItem = getMaterialItem(target.typeId, stateVal);
+        if (matItem) giveOrDrop(player, dimension, location, new ItemStack(matItem, 1));
 
         target.setPermutation(permutationFrom(target.permutation, shapeId));
         if (shapeId === "cc:copycat_door") {

@@ -58,11 +58,17 @@ export function getSounds(typeId) {
 export function getMaterialItem(typeId, stateValue) {
   const groupId = getGroupId(typeId);
   if (groupId) {
-    const entry = REGISTRY.materials[stateValue];
-    if (entry && entry[0] === groupId) return `minecraft:${stateValue}`;
+    if (stateValue) {
+      const entry = REGISTRY.materials[stateValue];
+      if (entry && entry[0] === groupId) return `minecraft:${stateValue}`;
+    }
+    const group = REGISTRY.groups[groupId];
+    if (group?.values?.length > 0) {
+      return `minecraft:${group.values[0]}`;
+    }
   }
   for (const [key, v] of external.entries()) {
-    if (v.typeId === typeId && v.stateValue === stateValue) {
+    if (v.typeId === typeId && (!stateValue || v.stateValue === stateValue)) {
       return key.split("|")[0];
     }
   }

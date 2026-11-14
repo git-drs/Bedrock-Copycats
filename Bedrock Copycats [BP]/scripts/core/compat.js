@@ -28,16 +28,27 @@ export function onStartup(handler) {
   evt.subscribe(handler);
 }
 
-/** Give an item stack to the player inventory or spawn it at the block location if full. */
+/** Give an item stack directly to the player inventory, or spawn it at the block location if full. */
 export function giveOrDrop(player, dimension, location, stack) {
   if (!stack) return;
   try {
-    const leftover = player?.getComponent("minecraft:inventory")?.container?.addItem(stack);
-    if (!leftover) return;
-    dimension.spawnItem(leftover, { x: location.x + 0.5, y: location.y + 0.5, z: location.z + 0.5 });
-  } catch {
-    try {
-      dimension.spawnItem(stack, { x: location.x + 0.5, y: location.y + 0.5, z: location.z + 0.5 });
-    } catch (_) {}
+    const inv = player?.getComponent("minecraft:inventory") ?? player?.getComponent("inventory");
+    const container = inv?.container;
+    if (container) {
+      const leftover = container.addItem(stack);
+      if (!leftover) return;
+      if (dimension && location) {
+        dimension.spawnItem(leftover, { x: location.x + 0.5, y: location.y + 0.5, z: location.z + 0.5 });
+      }
+      return;
+    }
+  } catch (e) {
+    console.warn(`[copycat] container addItem error: ${e}`);
   }
+
+  try {
+    if (dimension && location) {
+      dimension.spawnItem(stack, { x: location.x + 0.5, y: location.y + 0.5, z: location.z + 0.5 });
+    }
+  } catch (_) {}
 }
