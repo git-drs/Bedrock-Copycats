@@ -19,7 +19,7 @@ export function handleTransform({ player, block, face, cancel }) {
       if (!target || target.typeId !== typeId || !isTransformable(typeId)) return;
       const perm = target.permutation;
 
-      if ((face === "Up" || face === "Down") && canRotate(typeId)) {
+      if (((face === "Up" || face === "Down") || !canChangePosition(typeId)) && canRotate(typeId)) {
         const next = nextRotation(getState(perm, "minecraft:cardinal_direction"));
         target.setPermutation(permutationFrom(perm, typeId, { "minecraft:cardinal_direction": next }));
         playSound(dimension, location, SOUNDS.rotate);

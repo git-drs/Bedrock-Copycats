@@ -4,68 +4,80 @@ This tracker records the roadmap, technical specifications, planning subagent ou
 
 Target Repository: `https://github.com/git-drs/Bedrock-Copycats`  
 Working Branch: `feat/all-copycat-blocks`  
-Status: **Phase 1 - Planning & Architectural Design**
+Status: **Phase 2 - Sequential Implementation (One-by-One)**
 
 ---
 
 ## 1. Master Block Inventory & Implementation Status
 
-| # | Block ID | Family | Texturable? | Geometry Source | Permutations / States | Script Logic | Status |
-|---|---|---|---|---|---|---|---|
-| 1 | `cc:copycat_door` | Enclosures | Yes | Custom 2-part Geo / Bedrock door model | `minecraft:cardinal_direction`, `cc:half` (upper/lower), `cc:hinge` (left/right), `cc:open` | 2-block multiblock placement, breaking sync, open toggle, hinge mirror | ⏳ Planned |
-| 2 | `cc:copycat_bars` | Enclosures | Yes | 4-way lattice geo (center + 4 wings) | `cc:north_connected`, `cc:south_connected`, `cc:east_connected`, `cc:west_connected` | Dynamic 4-way connection via `connections.js` | ⏳ Planned |
-| 3 | `cc:copycat_wall` | Enclosures | Yes | Post + 4 connecting walls | `cc:wall_post`, `cc:north`, `cc:south`, `cc:east`, `cc:west` | Dynamic wall connections, 24px collision height | ⏳ Planned |
-| 4 | `cc:copycat_fence_gate` | Enclosures | Yes | Gate frame + dual swing leaves | `minecraft:cardinal_direction`, `cc:open`, `cc:in_wall` | Swing away from player, connect to fences/walls | ⏳ Planned |
-| 5 | `cc:copycat_vertical_slab` | Structural | Yes | 8x16x16 vertical half cube | `minecraft:cardinal_direction` | 4 cardinal wall-mounted slab placements | ⏳ Planned |
-| 6 | `cc:copycat_step` | Structural | Yes | 8x8x16 quarter step | `minecraft:cardinal_direction`, `cc:vertical_half` | 8-orientation quarter-block stair step | ⏳ Planned |
-| 7 | `cc:copycat_ladder` | Structural | Yes | 1-pixel flat wall rung lattice | `minecraft:cardinal_direction` | Climbable wall ladder, no collision | ⏳ Planned |
-| 8 | `cc:copycat_chain` | Structural | Yes | 4x4 centered link geometry | `cc:axis` (`x`, `y`, `z`) | 3-axis orientation (hanging / horizontal) | ⏳ Planned |
-| 9 | `cc:copycat_layer` | Interactive | Yes | 16x(2..16)x16 stacked slices | `cc:height` (1 to 8) | Stacking on right-click, stepped collision | ⏳ Planned |
-| 10 | `cc:copycat_lantern` | Interactive | Yes | Lantern body + standing/hanging finial | `cc:hanging` (true/false) | Standing vs hanging, `minecraft:light_emission: 15` | ⏳ Planned |
-| 11 | `cc:copycat_pressure_plate` | Interactive | Yes | Floor plate (1px raised vs flat) | `cc:pressed` (true/false) | Entity stepping detection, sound, unpress | ⏳ Planned |
-| 12 | `cc:copycat_button` | Interactive | Yes | Small button box (face + wall) | `minecraft:block_face`, `minecraft:cardinal_direction`, `cc:pressed` | 30-tick pulse timer, click sounds | ⏳ Planned |
+| # | Block ID | Family | Texturable? | Geometry File | Base Block JSON | Loot Table | Script Integration | Status |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `cc:copycat_vertical_slab` | Structural | Yes | `copycat_vertical_slab.geo.json` | `copycat_vertical_slab.block.json` | `copycat_vertical_slab.json` | `transform.js`, `wrench.js` | ✅ Implemented |
+| 2 | `cc:copycat_step` | Structural | Yes | `copycat_step.geo.json` | `copycat_step.block.json` | `copycat_step.json` | `transform.js`, `wrench.js` | ⏳ Pending |
+| 3 | `cc:copycat_ladder` | Structural | Yes | `copycat_ladder.geo.json` | `copycat_ladder.block.json` | `copycat_ladder.json` | `ladder.js` (climb/sneak) | ⏳ Pending |
+| 4 | `cc:copycat_chain` | Structural | Yes | `copycat_chain.geo.json` | `copycat_chain.block.json` | `copycat_chain.json` | `transform.js` (3-axis cycle) | ⏳ Pending |
+| 5 | `cc:copycat_bars` | Enclosures | Yes | `copycat_bars.geo.json` | `copycat_bars.block.json` | `copycat_bars.json` | `connections.js` (4-way bars) | ⏳ Pending |
+| 6 | `cc:copycat_wall` | Enclosures | Yes | `copycat_wall.geo.json` | `copycat_wall.block.json` | `copycat_wall.json` | `connections.js` (post + 24px col) | ⏳ Pending |
+| 7 | `cc:copycat_fence_gate` | Enclosures | Yes | `copycat_fence_gate.geo.json` | `copycat_fence_gate.block.json` | `copycat_fence_gate.json` | `fence_gate.js` (swing/in-wall) | ⏳ Pending |
+| 8 | `cc:copycat_door` | Enclosures | Yes | `copycat_door.geo.json` | `copycat_door.block.json` | `copycat_door.json` | `door.js` (2-block multiblock) | ⏳ Pending |
+| 9 | `cc:copycat_layer` | Interactive | Yes | `copycat_layer.geo.json` | `copycat_layer.block.json` | `copycat_layer.json` | `layer.js` (1-8 slice stack/drop) | ⏳ Pending |
+| 10 | `cc:copycat_lantern` | Interactive | Yes | `copycat_lantern.geo.json` | `copycat_lantern.block.json` | `copycat_lantern.json` | `lantern.js` (hanging/emission 15)| ⏳ Pending |
+| 11 | `cc:copycat_pressure_plate`| Interactive| Yes | `copycat_pressure_plate.geo.json` | `copycat_pressure_plate.block.json` | `copycat_pressure_plate.json` | `pressure_plate.js` (step query)| ⏳ Pending |
+| 12 | `cc:copycat_button` | Interactive | Yes | `copycat_button.geo.json` | `copycat_button.block.json` | `copycat_button.json` | `button.js` (30-tick pulse) | ⏳ Pending |
 
 ---
 
-## 2. Planning Subagent Assignments
+## 2. Planning Phase Summary (Consolidated Specifications)
 
-We divide the planning across 3 dedicated specialized subagents:
-1. **Agent 1: Enclosures & Multiblock Mechanisms** (`copycat_door`, `copycat_fence_gate`, `copycat_bars`, `copycat_wall`)
-   - Detailed collision/selection box geometry specifications.
-   - Script multiblock synchronization: door lower/upper pair placement, breaking cascade, texturing cascade.
-   - Open/close state transitions, sound definitions, and hinge side calculation.
-   - Dynamic 4-way connection algorithms matching vanilla bars and walls.
-2. **Agent 2: Structural & Architectural Elements** (`copycat_vertical_slab`, `copycat_step`, `copycat_ladder`, `copycat_chain`)
-   - Rotational traits (`minecraft:placement_direction`, cardinal orientation).
-   - Blockbench geometry bone hierarchy and UV unwrapping for copycat texturing.
-   - Climbable behavior for ladder (`tag:climbable`, `minecraft:climber` or custom player velocity handling).
-   - Axis placement traits for chain.
-3. **Agent 3: Stackable, Utility & Interactive Devices** (`copycat_layer`, `copycat_lantern`, `copycat_pressure_plate`, `copycat_button`)
-   - Stacking mechanics for layers (handling item consumption and height state increments).
-   - Light emission components and ceiling vs floor attachment for lantern.
-   - Pressure plate entity detection (custom component vs entity tick query).
-   - Button pulse timing, attachment directions (ceiling, floor, wall).
+All 3 Planning Subagents have delivered comprehensive specifications:
+
+### Family A: Enclosures & Passages
+- **`copycat_door`**: Multiblock pair with upper & lower halves (`cc:half`), hinge side calculation (`cc:hinge`), open/close rotation, breaking cascade with drop de-duplication, and synchronized texturing across both halves.
+- **`copycat_bars`**: Modular 2-pixel centered lattice with 4-way connections (`cc:north_connected`, etc.) in `connections.js`.
+- **`copycat_wall`**: Post state (`cc:wall_post`) + 4-way connections with mandatory **24px collision height** (1.5 blocks) preventing jumping over.
+- **`copycat_fence_gate`**: Cardinal placement, swings away from player, lowers height (`cc:in_wall`) next to stone walls, disables collision when opened.
+
+### Family B: Structural & Architectural Elements
+- **`copycat_vertical_slab`**: 8x16x16 vertical half block against 4 cardinal faces, rotating with wrench.
+- **`copycat_step`**: 8-orientation quarter-step (lower 4 cardinal, upper 4 cardinal) with stepped collision boxes, wrench rotation & position toggle.
+- **`copycat_ladder`**: 3D rung lattice against 4 walls, climbable script logic (`ladder.js`) supporting jump-climbing and sneak-hovering.
+- **`copycat_chain`**: Centered 4x4 link geometry supporting 3 axes: Y (vertical hanging), X (east-west), Z (north-south) with wrench axis cycling.
+
+### Family C: Stackable, Utility & Interactive Devices
+- **`copycat_layer`**: 16x(2..16)x16 stacked slices with 8 height states. Right-click stacking, survival drop multiplier ($H$ items on break).
+- **`copycat_lantern`**: Standing on floor vs hanging from ceiling (`cc:hanging`), finial chain geometry, light emission level 15.
+- **`copycat_pressure_plate`**: Floor sensor with unpressed/pressed permutations, entity step-on detection, redstone power 15 output.
+- **`copycat_button`**: 6-face attachment (walls, floor, ceiling) with 30-tick auto-reset pulse and click sounds.
 
 ---
 
-## 3. Implementation Workflow Rules
+## 3. Sequential Execution Order
 
-Each block MUST follow this strict sequential lifecycle:
-1. **Geometry Model**: Authored in `Bedrock Copycats [RP]/models/blocks/copycat_<shape>.geo.json` with per-face UV material instance tagging (`north`, `south`, `east`, `west`, `up`, `down`).
-2. **Base Block Definition**: Authored in `Bedrock Copycats [BP]/blocks/copycat/base/copycat_<shape>.block.json` with format version `1.21.70` (or `1.21.130` for compound collision), traits, states, permutations, and loot component.
-3. **Loot Table**: Defined in `Bedrock Copycats [BP]/loot_tables/blocks/copycat_<shape>.json`.
-4. **Script Mechanics**: Wired into `scripts/systems/` (e.g., `multiblock.js`, `connections.js`, `transform.js`, `texturing.js`, `wrench.js`).
-5. **Datagen Pipeline Validation**: Run `node datagen/run.mjs --check` to verify no schema errors, state conflicts, or missing geometries.
-6. **Full Variant Generation**: Run `npm run datagen` (emits all 87 material variant blocks, updates `scripts/generated/registry.js`, updates `blocks.json`, updates `en_US.lang`, and auto-deploys to `games/com.mojang/`).
-7. **Git Commit**: Commit the completed, tested block with an informative commit message.
+We will build, test, and wire each block **one by one**:
+1. `cc:copycat_vertical_slab`
+2. `cc:copycat_step`
+3. `cc:copycat_chain`
+4. `cc:copycat_ladder`
+5. `cc:copycat_bars`
+6. `cc:copycat_wall`
+7. `cc:copycat_fence_gate`
+8. `cc:copycat_door`
+9. `cc:copycat_layer`
+10. `cc:copycat_lantern`
+11. `cc:copycat_pressure_plate`
+12. `cc:copycat_button`
+
+For each block, the full lifecycle is:
+`Model Geo JSON` ➔ `Base Block JSON` ➔ `Loot Table JSON` ➔ `Script Handler` ➔ `Datagen Check & Build` ➔ `Git Commit`
 
 ---
 
 ## 4. Execution Log
 
-- **Step 0**: Initial repository state reset to `origin/main`, branch `feat/all-copycat-blocks` created.
-- **Step 1**: Datagen pipeline fixed (format version >= 1.21.70 for isotropic, minimum 2 enum state values, auto-deploy to com.mojang).
-- **Step 2**: Survival economy implemented (item deduction, refunds on wrench/re-texture, block break drop).
+- **Step 0**: Repository synced with `origin/main`, branch `feat/all-copycat-blocks` created.
+- **Step 1**: Datagen pipeline fixed (isotropic format version >= 1.21.70, minimum 2 enum values, auto-deploy).
+- **Step 2**: Survival economy implemented (refund on break/wrench, item deduction on texturing).
 - **Step 3**: Stair corner connection algorithm implemented in `connections.js`.
-- **Step 4**: Baseline committed and pushed to `origin/feat/all-copycat-blocks`.
-- **Step 5**: Planning Subagents launched for Families A, B, and C.
+- **Step 4**: Baseline committed (`5c239b2`) and pushed to `origin/feat/all-copycat-blocks` on GitHub.
+- **Step 5**: Planning Subagents executed and consolidated.
+- **Step 6**: Sequential construction initialized.
