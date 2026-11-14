@@ -1,0 +1,217 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.copycat_button_unpressed",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [
+					0,
+					0.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								0,
+								-2
+							],
+							"size": [
+								6,
+								2,
+								4
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										5,
+										14
+									],
+									"uv_size": [
+										6,
+										2
+									],
+									"material_instance": "north"
+								},
+								"south": {
+									"uv": [
+										5,
+										14
+									],
+									"uv_size": [
+										6,
+										2
+									],
+									"material_instance": "south"
+								},
+								"east": {
+									"uv": [
+										6,
+										14
+									],
+									"uv_size": [
+										4,
+										2
+									],
+									"material_instance": "east"
+								},
+								"west": {
+									"uv": [
+										6,
+										14
+									],
+									"uv_size": [
+										4,
+										2
+									],
+									"material_instance": "west"
+								},
+								"up": {
+									"uv": [
+										11,
+										10
+									],
+									"uv_size": [
+										-6,
+										-4
+									],
+									"material_instance": "up"
+								},
+								"down": {
+									"uv": [
+										11,
+										10
+									],
+									"uv_size": [
+										-6,
+										-4
+									],
+									"material_instance": "down"
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.copycat_button_pressed",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [
+					0,
+					0.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								0,
+								-2
+							],
+							"size": [
+								6,
+								1,
+								4
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										5,
+										15
+									],
+									"uv_size": [
+										6,
+										1
+									],
+									"material_instance": "north"
+								},
+								"south": {
+									"uv": [
+										5,
+										15
+									],
+									"uv_size": [
+										6,
+										1
+									],
+									"material_instance": "south"
+								},
+								"east": {
+									"uv": [
+										6,
+										15
+									],
+									"uv_size": [
+										4,
+										1
+									],
+									"material_instance": "east"
+								},
+								"west": {
+									"uv": [
+										6,
+										15
+									],
+									"uv_size": [
+										4,
+										1
+									],
+									"material_instance": "west"
+								},
+								"up": {
+									"uv": [
+										11,
+										10
+									],
+									"uv_size": [
+										-6,
+										-4
+									],
+									"material_instance": "up"
+								},
+								"down": {
+									"uv": [
+										11,
+										10
+									],
+									"uv_size": [
+										-6,
+										-4
+									],
+									"material_instance": "down"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

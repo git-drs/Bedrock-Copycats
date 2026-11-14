@@ -1,0 +1,439 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:block": {
+		"description": {
+			"identifier": "cc:copycat_button__glass_blend_0",
+			"states": {
+				"cc:powered": [
+					false,
+					true
+				],
+				"cc:material": [
+					"black_stained_glass",
+					"blue_stained_glass",
+					"brown_stained_glass",
+					"cyan_stained_glass",
+					"frosted_ice",
+					"gray_stained_glass",
+					"green_stained_glass",
+					"ice",
+					"light_blue_stained_glass",
+					"light_gray_stained_glass",
+					"lime_stained_glass",
+					"magenta_stained_glass",
+					"orange_stained_glass",
+					"pink_stained_glass",
+					"purple_stained_glass",
+					"red_stained_glass"
+				]
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				},
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:custom_components": [
+				"cc:button"
+			],
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 2.5
+			},
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [
+					-3,
+					0,
+					-2
+				],
+				"size": [
+					6,
+					2,
+					4
+				]
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.copycat_button_unpressed"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "copycat_base",
+					"render_method": "blend"
+				}
+			},
+			"minecraft:map_color": "#ff7336",
+			"minecraft:redstone_producer": {
+				"power": 0,
+				"strongly_powered_face": "down",
+				"connected_faces": [
+					"down",
+					"up",
+					"north",
+					"south",
+					"west",
+					"east"
+				],
+				"transform_relative": true
+			},
+			"minecraft:loot": "loot_tables/blocks/copycat_button.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							-90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							-90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' && q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'down' && q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:powered')",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.copycat_button_pressed"
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-3,
+							0,
+							-2
+						],
+						"size": [
+							6,
+							1,
+							4
+						]
+					},
+					"minecraft:redstone_producer": {
+						"power": 15,
+						"strongly_powered_face": "down",
+						"transform_relative": true
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'black_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "black_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'blue_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "blue_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'brown_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "brown_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'cyan_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cyan_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'frosted_ice'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "frosted_ice",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'gray_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "gray_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'green_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "green_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'ice'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "ice",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_blue_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_blue_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'light_gray_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "light_gray_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'lime_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "lime_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'magenta_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "magenta_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'orange_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "orange_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'pink_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "pink_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'purple_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "purple_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('cc:material') == 'red_stained_glass'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "red_stained_glass",
+							"render_method": "blend"
+						}
+					}
+				}
+			}
+		]
+	}
+}

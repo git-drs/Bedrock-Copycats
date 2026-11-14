@@ -29,6 +29,7 @@
 	"shapes": {
 		"_why": "Per-shape overrides of what the wrench may do. Defaults come from the base block's own states/traits.",
 		"cc:copycat_board": { "transform": { "rotate": false, "position": false } },
+		"cc:copycat_button": { "transform": { "rotate": false, "position": false } },
 		"cc:copycat_chain": { "transform": { "rotate": true, "position": false } }
 	}
 }
