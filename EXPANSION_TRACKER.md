@@ -175,6 +175,25 @@ For each block, the full lifecycle is:
      - Ran `npm run datagen`: all 174 ladder and button variants updated, all 2,088 copycat blocks compiled.
      - Ran `npm run datagen:check`: 2,102 files clean with 0 errors.
      - Automatically synced all updated BP and RP files to `/data/data/com.termux/files/home/storage/shared/games/com.mojang/development_*_packs/`.
+- **Step 20**: Button 90-Degree Y-Axis Rotation Alignment (Horizontal Wall & Facing Floor/Ceiling):
+  1. **Root Cause Analysis**: `copycat_button.block.json` had incorrect Z-roll rotations (`[0, 0, 90]` and `[0, 0, -90]`) for West and East walls, which tilted the button on its side into an unnatural vertical orientation (height 6, width 4) instead of remaining horizontal along the wall. In addition, floor and ceiling permutations had inverted 90° Y yaw relative to player line of sight (perpendicular instead of parallel).
+  2. **Unified Rotation System**:
+     - **Walls**: All 4 walls use `rx = 90` pitched to wall, with Y-axis yaw matching the face clicked:
+       - `block_face == 'south'`: attaches to North wall ($Z \in [-8, -6]$), `rotation: [90, 0, 0]`, `origin: [-3, 6, -8], size: [6, 4, 2]`.
+       - `block_face == 'north'`: attaches to South wall ($Z \in [6, 8]$), `rotation: [90, 180, 0]`, `origin: [-3, 6, 6], size: [6, 4, 2]`.
+       - `block_face == 'west'`: attaches to East wall ($X \in [6, 8]$), `rotation: [90, 270, 0]`, `origin: [6, 6, -3], size: [2, 4, 6]`.
+       - `block_face == 'east'`: attaches to West wall ($X \in [-8, -6]$), `rotation: [90, 90, 0]`, `origin: [-8, 6, -3], size: [2, 4, 6]`.
+     - **Floor**:
+       - Facing North/South: `rotation: [0, 90, 0]`, `origin: [-2, 0, -3], size: [4, 2, 6]` (length 6 aligned with line of sight).
+       - Facing East/West: `rotation: [0, 0, 0]`, `origin: [-3, 0, -2], size: [6, 2, 4]` (length 6 aligned with line of sight).
+     - **Ceiling**:
+       - Facing North/South: `rotation: [180, 90, 0]`, `origin: [-2, 14, -3], size: [4, 2, 6]`.
+       - Facing East/West: `rotation: [180, 0, 0]`, `origin: [-3, 14, -2], size: [6, 2, 4]`.
+  3. **Rebuild & Auto-Deployment**:
+     - Ran `npm run datagen` (rebuilt all 87 `copycat_button__*.block.json` variants).
+     - Verified with `npm run datagen:check` (2,102 files clean).
+     - Synced directly to `development_behavior_packs` and `development_resource_packs`.
+
 
 
 
