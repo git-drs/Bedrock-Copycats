@@ -76,25 +76,37 @@
 		},
 		"permutations": [
 			{
-				"condition": "q.block_state('minecraft:block_face') == 'east'",
+				"condition": "q.block_state('minecraft:block_face') == 'south'",
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
-							0,
 							90,
-							-90
+							0,
+							0
 						]
-					}
-				}
-			},
-			{
-				"condition": "q.block_state('minecraft:block_face') == 'west'",
-				"components": {
-					"minecraft:transformation": {
-						"rotation": [
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
 							0,
-							90,
-							90
+							-8
+						],
+						"size": [
+							16,
+							16,
+							2
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							2
 						]
 					}
 				}
@@ -104,21 +116,105 @@
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
-							-90,
-							0,
+							90,
+							180,
 							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							6
+						],
+						"size": [
+							16,
+							16,
+							2
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							6
+						],
+						"size": [
+							16,
+							16,
+							2
 						]
 					}
 				}
 			},
 			{
-				"condition": "q.block_state('minecraft:block_face') == 'south'",
+				"condition": "q.block_state('minecraft:block_face') == 'west'",
 				"components": {
 					"minecraft:transformation": {
 						"rotation": [
 							90,
-							0,
+							270,
 							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							6,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							6,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							90,
+							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							2,
+							16,
+							16
 						]
 					}
 				}
@@ -132,6 +228,30 @@
 							90,
 							0
 						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
 					}
 				}
 			},
@@ -143,6 +263,30 @@
 							0,
 							0,
 							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
 						]
 					}
 				}
@@ -156,6 +300,30 @@
 							270,
 							0
 						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
 					}
 				}
 			},
@@ -167,6 +335,30 @@
 							0,
 							180,
 							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
 						]
 					}
 				}
@@ -180,6 +372,30 @@
 							90,
 							0
 						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
 					}
 				}
 			},
@@ -191,6 +407,30 @@
 							180,
 							0,
 							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
 						]
 					}
 				}
@@ -204,6 +444,30 @@
 							270,
 							0
 						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
 					}
 				}
 			},
@@ -215,6 +479,30 @@
 							180,
 							180,
 							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							14,
+							-8
+						],
+						"size": [
+							16,
+							2,
+							16
 						]
 					}
 				}

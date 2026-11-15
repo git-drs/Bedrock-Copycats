@@ -115,6 +115,30 @@
 							0,
 							180
 						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							13,
+							-8
+						],
+						"size": [
+							16,
+							3,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							13,
+							-8
+						],
+						"size": [
+							16,
+							3,
+							16
+						]
 					}
 				}
 			},
@@ -126,6 +150,30 @@
 							0,
 							0,
 							0
+						]
+					},
+					"minecraft:collision_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							3,
+							16
+						]
+					},
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							3,
+							16
 						]
 					}
 				}

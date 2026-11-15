@@ -193,6 +193,28 @@ For each block, the full lifecycle is:
      - Ran `npm run datagen` (rebuilt all 87 `copycat_button__*.block.json` variants).
      - Verified with `npm run datagen:check` (2,102 files clean).
      - Synced directly to `development_behavior_packs` and `development_resource_packs`.
+- **Step 21**: Unified Wall Rotation & Bounding Box System Synchronization (Panels, Boards, Vertical Slabs, Steps):
+  1. **Panels (`copycat_pannel.block.json`)**:
+     - Enabled `minecraft:placement_position` (`block_face`) with fallback to `cardinal_direction`.
+     - Standardized all 4 wall rotations using horizontal pitch `[90, ry, 0]`: South wall `[90, 0, 0]`, North wall `[90, 180, 0]`, West wall `[90, 270, 0]`, East wall `[90, 90, 0]`.
+     - Synchronized 3-pixel collision and selection boxes (`size: [16, 16, 3]` and `[3, 16, 16]`) matching each wall facet.
+  2. **Horizontal Panels (`copycat_pannel_horizontal.block.json`)**:
+     - Bumped to `format_version: 1.21.70`.
+     - Added synchronized 3-pixel collision and selection boxes for `bottom` (`[-8, 0, -8], size: [16, 3, 16]`) and `top` (`[-8, 13, -8], size: [16, 3, 16]`).
+  3. **Boards (`copycat_board.block.json`)**:
+     - Bumped to `format_version: 1.21.70`.
+     - Replaced compound Z-rotations with standard `[90, ry, 0]` wall rotations.
+     - Added 2-pixel collision and selection boxes across all 12 permutations (4 walls, 4 floor cardinals, 4 ceiling cardinals).
+  4. **Vertical Slabs (`copycat_vertical_slab.block.json`)**:
+     - Enabled `minecraft:placement_position` (`block_face`) alongside `cardinal_direction`.
+     - Added synchronized 8-pixel collision and selection boxes across all 4 cardinal facets ($X \in [-8, 0], [0, 8]$ and $Z \in [-8, 0], [0, 8]$).
+  5. **Steps (`copycat_step.block.json`)**:
+     - Expanded permutations to 8 explicit cases combining `vertical_half` (bottom/top) and `cardinal_direction` (north, south, east, west).
+     - Aligned physical stepped collision and selection boxes with the upper and lower quarter-step geometries.
+  6. **Rebuild, Verification & Auto-Deploy**:
+     - Regenerated 436 block variant files via `npm run datagen`.
+     - Verified with `npm run datagen:check` (2,102 files clean, 0 diffs).
+     - Auto-deployed all updated behavior and resource pack assets directly to development packs.
 
 
 
