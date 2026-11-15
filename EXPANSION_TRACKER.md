@@ -215,6 +215,21 @@ For each block, the full lifecycle is:
      - Regenerated 436 block variant files via `npm run datagen`.
      - Verified with `npm run datagen:check` (2,102 files clean, 0 diffs).
      - Auto-deployed all updated behavior and resource pack assets directly to development packs.
+- **Step 22**: Fence Gate 1:1 Authentic Visual Geometry & Multi-Cardinal Bounding Box Fix:
+  1. **Root Cause Analysis**: The fence gate previously had placeholder 4-cube geometry consisting of 16px solid posts and a solid 12x8x2 slab with no rails, no center struts, and no open windows. Additionally, permutations did not rotate `collision_box` or `selection_box` with `minecraft:cardinal_direction`, causing East and West fence gates to have bounding boxes perpendicular to the rendered mesh.
+  2. **1:1 Create / Vanilla 3D Geometry (`copycat_fence_gate.geo.json`)**:
+     - Reconstructed all 4 fence gate geometries (`closed`, `open`, `wall_closed`, `wall_open`) using the official Create 28-cube model with authentic sub-quadrant directional face UV mapping.
+     - **Closed**: Two 11px side posts ($Y \in [5, 16]$), upper rails ($Y \in [12, 15]$), lower rails ($Y \in [6, 9]$), dual center vertical struts ($Y \in [9, 12]$) meeting at center $X=0$, and twin 4x3 open windows.
+     - **Open**: Side posts stay stationary while both gate wings swing $90^\circ$ forward into $+Z$, hugging the outer posts ($X \in [-8, -6]$ and $[6, 8]$) and leaving a 12-pixel wide open passage.
+     - **In-Wall**: Lowered by 3px ($Y \in [2, 13]$ for posts, $Y \in [3, 12]$ for gate wings).
+  3. **16-State Block Permutations (`copycat_fence_gate.block.json`)**:
+     - Expanded permutations to 16 explicit states combining `cardinal_direction` (north, south, east, west) $\times$ `cc:open` (false, true) $\times$ `cc:in_wall` (false, true).
+     - Aligned collision boxes (height 24 when closed, height 21 when in wall, `false` when open) and selection boxes (height 16/13) along the correct world axes (X-aligned for North/South, Z-aligned for East/West).
+  4. **Rebuild, Verification & Auto-Deploy**:
+     - Regenerated all 87 `copycat_fence_gate__*.block.json` files via `npm run datagen`.
+     - Verified with `npm run datagen:check` (2,102 files clean, 0 diffs).
+     - Auto-deployed to `com.mojang/development_*_packs/`.
+
 
 
 
